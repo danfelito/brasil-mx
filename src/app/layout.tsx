@@ -20,10 +20,11 @@ const barlowCondensed = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: "New Holland Safety Footwear México | Calzado de Seguridad",
+  title: "Brasil MX · Spessoto & New Holland | Calzado de Seguridad B2B México",
   description:
-    "Catálogo 2026 de calzado de seguridad New Holland. Botinas y botas para dama y caballero con puntera de acero, suela antideslizante y tecnología de protección. Compra en línea con tallas y precios en USD.",
+    "Distribuidor B2B en México de calzado de seguridad certificado. Marcas Spessoto (desde 1915) y New Holland. Botinas y botas para dama y caballero con puntera de acero, suela antideslizante y tecnología de protección. Cotización por volumen, precios en USD. Contacto: 229 464 8962 · ventas@brasilmx.mx",
   keywords: [
+    "Spessoto",
     "New Holland",
     "calzado de seguridad",
     "botinas de seguridad",
@@ -31,13 +32,15 @@ export const metadata: Metadata = {
     "puntera de acero",
     "suela antideslizante",
     "calzado industrial México",
+    "B2B calzado de seguridad",
+    "Brasil MX",
   ],
-  authors: [{ name: "New Holland Safety Footwear" }],
+  authors: [{ name: "Brasil MX" }],
   openGraph: {
-    title: "New Holland Safety Footwear México",
+    title: "Brasil MX · Spessoto & New Holland — Calzado de Seguridad B2B México",
     description:
-      "Calzado de seguridad profesional con tecnología de protección. Catálogo 2026 en español.",
-    siteName: "New Holland Safety Footwear",
+      "Calzado de seguridad profesional Spessoto y New Holland. Distribución B2B en México. Catálogo 2026 en español.",
+    siteName: "Brasil MX",
     type: "website",
     locale: "es_MX",
   },

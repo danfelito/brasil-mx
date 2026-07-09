@@ -5,6 +5,7 @@ import { Star, ShieldCheck, Plus, ChevronRight } from "lucide-react";
 import type { Producto } from "@/data/productos";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SpessotoMark, NewHollandMark } from "./Logo";
 import { cn } from "@/lib/utils";
 
 export function TarjetaProducto({
@@ -16,6 +17,7 @@ export function TarjetaProducto({
   prioridad?: boolean;
   onVerDetalle: (p: Producto) => void;
 }) {
+  const esSpessoto = producto.marca === "Spessoto";
   return (
     <motion.div
       layout
@@ -25,7 +27,8 @@ export function TarjetaProducto({
       transition={{ duration: 0.35, ease: "easeOut" }}
       className={cn(
         "group relative flex flex-col rounded-2xl bg-card border border-border overflow-hidden shadow-sm hover:shadow-xl hover:shadow-brand/10 hover:border-brand/30 transition-all duration-300",
-        prioridad && "ring-2 ring-amber-accent/60"
+        prioridad && "ring-2 ring-amber-accent/60",
+        esSpessoto && "border-[#003f87]/25"
       )}
     >
       {/* Imagen */}
@@ -36,26 +39,37 @@ export function TarjetaProducto({
       >
         <img
           src={producto.imagen}
-          alt={`${producto.nombre} - ${producto.codigo}`}
+          alt={`${producto.nombre} - ${producto.codigo} (${producto.marca})`}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
         />
-        {/* Badges */}
+        {/* Badge de marca */}
         <div className="absolute top-3 left-3 flex flex-col gap-1.5">
+          <div
+            className={cn(
+              "inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[0.6rem] font-bold uppercase tracking-wide shadow",
+              esSpessoto
+                ? "bg-[#003f87] text-white"
+                : "bg-white text-[#003f87]"
+            )}
+          >
+            {esSpessoto ? <SpessotoMark className="h-3 w-3" /> : <NewHollandMark className="h-3 w-3" />}
+            {producto.marca}
+          </div>
           {producto.nuevo && (
-            <Badge className="bg-amber-accent text-amber-foreground hover:bg-amber-accent font-bold text-[0.65rem] shadow">
+            <Badge className="bg-amber-accent text-amber-foreground hover:bg-amber-accent font-bold text-[0.65rem] shadow w-fit">
               NUEVO 2026
             </Badge>
           )}
           {producto.destacado && (
-            <Badge className="bg-brand text-brand-foreground hover:bg-brand font-bold text-[0.65rem] shadow">
+            <Badge className="bg-brand text-brand-foreground hover:bg-brand font-bold text-[0.65rem] shadow w-fit">
               DESTACADO
             </Badge>
           )}
         </div>
         <div className="absolute top-3 right-3">
           <Badge variant="secondary" className="bg-background/90 backdrop-blur font-semibold text-[0.65rem]">
-            {producto.linea === "dama" ? "DAMA" : "CABALLERO"}
+            {producto.linea === "dama" ? "DAMA" : producto.linea === "caballero" ? "CABALLERO" : "UNISEX"}
           </Badge>
         </div>
         {/* Hover overlay */}
@@ -106,10 +120,21 @@ export function TarjetaProducto({
           <span className="line-clamp-2">{producto.seguridad[0]}</span>
         </div>
 
+        {/* Tallas disponibles */}
+        <div className="flex items-center gap-1.5 flex-wrap text-[0.7rem]">
+          <span className="text-muted-foreground font-medium">Tallas:</span>
+          <span className="font-semibold text-foreground">
+            {producto.tallas.length <= 4
+              ? producto.tallas.join(", ")
+              : `${producto.tallas[0]}–${producto.tallas[producto.tallas.length - 1]}`}
+          </span>
+          <span className="text-muted-foreground">({producto.tallas.length})</span>
+        </div>
+
         {/* Precio + CTA */}
         <div className="mt-auto flex items-end justify-between gap-2 pt-2 border-t border-border/60">
           <div>
-            <div className="text-[0.65rem] text-muted-foreground uppercase tracking-wide">Precio</div>
+            <div className="text-[0.65rem] text-muted-foreground uppercase tracking-wide">Precio B2B</div>
             <div className="font-display font-extrabold text-2xl text-foreground leading-none">
               ${producto.precio.toFixed(2)}
               <span className="text-xs font-bold text-muted-foreground ml-1">USD</span>

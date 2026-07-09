@@ -3,7 +3,7 @@
 import { useState, useMemo, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, SlidersHorizontal, Sparkles, X } from "lucide-react";
-import { productos, categorias, type Producto } from "@/data/productos";
+import { productos, categorias, marcas, type Producto } from "@/data/productos";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -23,9 +23,11 @@ const ETIQUETAS_USO = [
   "Pesado",
 ] as const;
 
-type Linea = "todas" | "dama" | "caballero";
+type Linea = "todas" | "dama" | "caballero" | "unisex";
+type Marca = "todas" | "Spessoto" | "New Holland";
 
 export function Catalogo() {
+  const [marca, setMarca] = useState<Marca>("todas");
   const [linea, setLinea] = useState<Linea>("todas");
   const [categoria, setCategoria] = useState<string>("todas");
   const [busqueda, setBusqueda] = useState("");
@@ -38,33 +40,9 @@ export function Catalogo() {
     setDetalleAbierto(true);
   }, []);
 
-  const filtrados = useMemo(() => {
-    let lista = productos.filter((p) => {
-      if (linea !== "todas" && p.linea !== linea) return false;
-      if (categoria !== "todas" && p.categoria !== categoria) return false;
-      if (busqueda.trim()) {
-        const q = busqueda.toLowerCase();
-        const match =
-          p.nombre.toLowerCase().includes(q) ||
-          p.codigo.toLowerCase().includes(q) ||
-          p.uso.toLowerCase().includes(q) ||
-          p.materiales.some((m) => m.nombre.toLowerCase().includes(q));
-        if (!match) return false;
-      }
-      if (usoActivo && !p.usoTags.includes(usoActivo)) return false;
-      return true;
-    });
-
-    // Reordenar: si hay uso activo, los que coinciden van arriba (ya filtrado arriba)
-    // Pero también permitimos "soft" reorder: sin filtro estricto, solo priorizar
-    return lista;
-  }, [linea, categoria, busqueda, usoActivo]);
-
-  // Versión "soft": cuando hay usoActivo, NO filtramos estrictamente, solo reordenamos
   const listaSoft = useMemo(() => {
-    if (!usoActivo) return filtrados;
-    // Reaplicar sin el filtro de uso, pero reordenando
     let lista = productos.filter((p) => {
+      if (marca !== "todas" && p.marca !== marca) return false;
       if (linea !== "todas" && p.linea !== linea) return false;
       if (categoria !== "todas" && p.categoria !== categoria) return false;
       if (busqueda.trim()) {
@@ -78,22 +56,27 @@ export function Catalogo() {
       }
       return true;
     });
-    // Reordenar: los que tienen el tag activo van primero
-    return [...lista].sort((a, b) => {
-      const aMatch = a.usoTags.includes(usoActivo) ? 0 : 1;
-      const bMatch = b.usoTags.includes(usoActivo) ? 0 : 1;
-      return aMatch - bMatch;
-    });
-  }, [usoActivo, linea, categoria, busqueda, filtrados]);
+
+    // Reordenar: si hay uso activo, los que coinciden van arriba (sin filtrar el resto)
+    if (usoActivo) {
+      lista = [...lista].sort((a, b) => {
+        const aMatch = a.usoTags.includes(usoActivo) ? 0 : 1;
+        const bMatch = b.usoTags.includes(usoActivo) ? 0 : 1;
+        return aMatch - bMatch;
+      });
+    }
+    return lista;
+  }, [marca, linea, categoria, busqueda, usoActivo]);
 
   const limpiarFiltros = () => {
+    setMarca("todas");
     setLinea("todas");
     setCategoria("todas");
     setBusqueda("");
     setUsoActivo(null);
   };
 
-  const hayFiltros = linea !== "todas" || categoria !== "todas" || busqueda || usoActivo;
+  const hayFiltros = marca !== "todas" || linea !== "todas" || categoria !== "todas" || busqueda || usoActivo;
 
   return (
     <section id="catalogo" className="relative py-14 sm:py-20 scroll-mt-20">
@@ -104,11 +87,12 @@ export function Catalogo() {
             Catálogo 2026
           </Badge>
           <h2 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-foreground tracking-tight">
-            Nuestros modelos de calzado de seguridad
+            Modelos por marca, uso y seguridad
           </h2>
           <p className="mt-3 text-muted-foreground text-base sm:text-lg">
-            22 modelos para dama y caballero. Filtra por uso para encontrar el calzado ideal
-            para tu entorno de trabajo.
+            {productos.length} modelos de las marcas <span className="font-semibold text-foreground">Spessoto</span> y{" "}
+            <span className="font-semibold text-foreground">New Holland</span>, para dama y caballero.
+            Filtra por uso para encontrar el calzado ideal para tu entorno de trabajo.
           </p>
         </div>
 
@@ -143,32 +127,39 @@ export function Catalogo() {
               />
             </div>
 
+            {/* Filtro marca */}
             <div className="flex items-center gap-1.5 flex-wrap">
+              <Segmento
+                valor={marca}
+                onChange={(v) => setMarca(v as Marca)}
+                opciones={[
+                  { v: "todas", l: "Todas" },
+                  { v: "Spessoto", l: "Spessoto" },
+                  { v: "New Holland", l: "New Holland" },
+                ]}
+              />
+            </div>
+
+            <div className="flex items-center gap-1.5 flex-wrap sm:ml-auto">
               <Segmento
                 valor={linea}
                 onChange={(v) => setLinea(v as Linea)}
                 opciones={[
                   { v: "todas", l: "Todos" },
                   { v: "dama", l: "Dama" },
-                  { v: "caballero", l: "Caballero" },
+                  { v: "caballero", l: "Cab." },
+                  { v: "unisex", l: "Unisex" },
                 ]}
               />
             </div>
 
-            <div className="flex items-center gap-1.5 flex-wrap sm:ml-auto">
+            <div className="flex items-center gap-1.5 flex-wrap">
               <SlidersHorizontal className="h-4 w-4 text-muted-foreground hidden sm:block" />
-              <Chip
-                activo={categoria === "todas"}
-                onClick={() => setCategoria("todas")}
-              >
+              <Chip activo={categoria === "todas"} onClick={() => setCategoria("todas")}>
                 Todas
               </Chip>
               {categorias.map((c) => (
-                <Chip
-                  key={c}
-                  activo={categoria === c}
-                  onClick={() => setCategoria(c)}
-                >
+                <Chip key={c} activo={categoria === c} onClick={() => setCategoria(c)}>
                   {c}
                 </Chip>
               ))}
@@ -184,6 +175,9 @@ export function Catalogo() {
               <span className="ml-1">
                 · ordenados por <span className="font-semibold text-brand">{usoActivo}</span>
               </span>
+            )}
+            {marca !== "todas" && (
+              <span className="ml-1">· <span className="font-semibold text-brand">{marca}</span></span>
             )}
           </p>
           {hayFiltros && (

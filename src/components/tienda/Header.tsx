@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ShoppingBag, Menu, X, ShieldCheck } from "lucide-react";
+import { ShoppingBag, Menu, X, ShieldCheck, Phone } from "lucide-react";
 import { Logo } from "./Logo";
 import { useCarrito, totalItems } from "@/lib/cart";
 import { Button } from "@/components/ui/button";
@@ -12,6 +12,7 @@ const NAV = [
   { label: "Por uso", href: "#usos" },
   { label: "Seguridad", href: "#seguridad" },
   { label: "Empresa", href: "#empresa" },
+  { label: "Políticas", href: "#politicas" },
 ];
 
 export function Header() {
@@ -30,12 +31,12 @@ export function Header() {
 
   return (
     <>
-      {/* Barra de anuncio */}
+      {/* Barra de anuncio B2B + México */}
       <div className="bg-brand text-brand-foreground text-[0.7rem] sm:text-xs font-medium">
         <div className="mx-auto max-w-7xl px-4 py-1.5 flex items-center justify-center gap-2 text-center">
           <ShieldCheck className="h-3.5 w-3.5 shrink-0" />
           <span>
-            Calzado de seguridad certificado · Envío gratis en pedidos +$200 USD · Catálogo 2026
+            Distribuidor B2B en México · Spessoto (desde 1915) y línea New Holland · Cotización por volumen para empresas
           </span>
         </div>
       </div>
@@ -50,7 +51,7 @@ export function Header() {
       >
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex h-16 items-center justify-between gap-4">
-            <a href="#inicio" aria-label="Inicio New Holland">
+            <a href="#inicio" aria-label="Inicio Spessoto Brasil MX">
               <Logo />
             </a>
 
@@ -67,6 +68,13 @@ export function Header() {
             </nav>
 
             <div className="flex items-center gap-2">
+              <a
+                href="tel:2294648962"
+                className="hidden lg:inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:text-brand/80 px-2"
+              >
+                <Phone className="h-4 w-4" />
+                229 464 8962
+              </a>
               <Button
                 onClick={abrirCarrito}
                 className="relative bg-brand text-brand-foreground hover:bg-brand/90 font-semibold"
@@ -105,6 +113,12 @@ export function Header() {
                   {n.label}
                 </a>
               ))}
+              <a
+                href="tel:2294648962"
+                className="px-2 py-3 text-sm font-semibold text-brand flex items-center gap-2"
+              >
+                <Phone className="h-4 w-4" /> 229 464 8962
+              </a>
             </div>
           </nav>
         )}

@@ -3,6 +3,7 @@ import { Hero } from "@/components/tienda/Hero";
 import { Catalogo } from "@/components/tienda/Catalogo";
 import { SeguridadSection } from "@/components/tienda/SeguridadSection";
 import { Testimonios } from "@/components/tienda/Testimonios";
+import { PoliticasSection } from "@/components/tienda/PoliticasSection";
 import { Footer } from "@/components/tienda/Footer";
 import { CarritoDrawer } from "@/components/tienda/CarritoDrawer";
 import { GuiaTallas } from "@/components/tienda/GuiaTallas";
@@ -19,6 +20,7 @@ export default function Home() {
         <GuiaTallas />
         <Testimonios />
         <CtaCorporativo />
+        <PoliticasSection />
       </main>
       <Footer />
       <CarritoDrawer />

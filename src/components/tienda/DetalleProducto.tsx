@@ -28,6 +28,7 @@ import { Separator } from "@/components/ui/separator";
 import { useCarrito } from "@/lib/cart";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { SpessotoMark, NewHollandMark } from "./Logo";
 
 export function DetalleProducto({
   producto,
@@ -114,9 +115,22 @@ export function DetalleProducto({
             <div>
               <div className="flex items-center justify-between gap-2 mb-1">
                 <span className="text-xs font-bold text-brand tracking-widest">{producto.codigo}</span>
-                <Badge variant="outline" className="font-semibold">
-                  {producto.linea === "dama" ? "Línea Dama" : "Línea Caballero"}
-                </Badge>
+                <div className="flex items-center gap-2">
+                  <span
+                    className={cn(
+                      "inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[0.6rem] font-bold uppercase tracking-wide",
+                      producto.marca === "Spessoto"
+                        ? "bg-[#003f87] text-white"
+                        : "bg-brand-light text-[#003f87]"
+                    )}
+                  >
+                    {producto.marca === "Spessoto" ? <SpessotoMark className="h-3 w-3" /> : <NewHollandMark className="h-3 w-3" />}
+                    {producto.marca}
+                  </span>
+                  <Badge variant="outline" className="font-semibold">
+                    {producto.linea === "dama" ? "Línea Dama" : producto.linea === "caballero" ? "Línea Caballero" : "Línea Unisex"}
+                  </Badge>
+                </div>
               </div>
               <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-foreground leading-tight">
                 {producto.nombre}

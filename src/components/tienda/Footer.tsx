@@ -1,21 +1,21 @@
 "use client";
 
-import { Logo } from "./Logo";
+import { SpessotoLogo, NewHollandLogo } from "./Logo";
 import { ShieldCheck, Truck, Headphones, CreditCard, Mail, Phone, MapPin } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 const GARANTIAS = [
-  { icon: ShieldCheck, titulo: "Calzado certificado", texto: "Cumple norma EPI de seguridad" },
-  { icon: Truck, titulo: "Envío a todo México", texto: "Gratis en pedidos +$200 USD" },
-  { icon: Headphones, titulo: "Asesoría especializada", texto: "Te ayudamos a elegir la talla" },
-  { icon: CreditCard, titulo: "Pago seguro", texto: "Confirmación antes de cobrar" },
+  { icon: ShieldCheck, titulo: "Calzado certificado EPI", texto: "Cumple norma de seguridad laboral" },
+  { icon: Truck, titulo: "Envío a todo México", texto: "Gratis en pedidos B2B +$200 USD" },
+  { icon: Headphones, titulo: "Asesoría B2B especializada", texto: "Selección de modelo por riesgo" },
+  { icon: CreditCard, titulo: "Facturación empresarial", texto: "CFDI 4.0 · Crédito a 15/30/45 días" },
 ];
 
 const LINKS = {
-  Catálogo: ["Línea Dama", "Línea Caballero", "Premium Vira Francesa", "Industrial", "Agrícola"],
-  Empresa: ["Sobre New Holland", "Casos de éxito", "Tecnología de seguridad", "Distribuidores"],
-  Ayuda: ["Guía de tallas", "Política de envíos", "Devoluciones", "Contacto"],
+  Catálogo: ["Línea Spessoto Premium", "Línea New Holland", "Botinas Dama", "Botinas Caballero", "Por uso de trabajo"],
+  Empresa: ["Sobre Brasil MX", "Marcas Spessoto y New Holland", "Casos de éxito", "Tecnología de seguridad"],
+  Ayuda: ["Guía de tallas", "Políticas de compra", "Cotización B2B", "Contacto"],
 };
 
 export function Footer() {
@@ -42,24 +42,29 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-10">
         <div className="grid gap-8 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <Logo variant="light" />
+            {/* Marca principal: Spessoto + New Holland secundario */}
+            <div className="flex flex-col gap-3">
+              <SpessotoLogo variant="light" />
+              <NewHollandLogo variant="light" className="opacity-90" />
+            </div>
             <p className="mt-4 text-sm text-brand-foreground/70 max-w-sm leading-relaxed">
-              Calzado de seguridad profesional con licencia oficial New Holland. Botinas y
-              botas para dama y caballero, diseñadas para obra, industria, campo y uso
-              ejecutivo. Catálogo 2026 con precios en USD para México.
+              Brasil MX — distribuidor B2B en México de calzado de seguridad certificado. Representamos
+              la marca Spessoto (tradición desde 1915) y la línea con licencia New Holland. Botinas y
+              botas para dama y caballero, para obra, industria, campo y uso ejecutivo. Catálogo 2026
+              con precios en USD para el mercado mexicano.
             </p>
             <div className="mt-5 space-y-1.5 text-sm text-brand-foreground/80">
-              <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-amber-accent" />
-                ventas@newholland-safety.mx
-              </div>
-              <div className="flex items-center gap-2">
+              <a href="tel:2294648962" className="flex items-center gap-2 hover:text-brand-foreground transition-colors">
                 <Phone className="h-4 w-4 text-amber-accent" />
-                +52 55 3721 1348
-              </div>
+                229 464 8962
+              </a>
+              <a href="mailto:ventas@brasilmx.mx" className="flex items-center gap-2 hover:text-brand-foreground transition-colors">
+                <Mail className="h-4 w-4 text-amber-accent" />
+                ventas@brasilmx.mx
+              </a>
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-amber-accent" />
-                Ciudad de México, México
+                México · Atendemos a todo el país
               </div>
             </div>
           </div>
@@ -73,7 +78,7 @@ export function Footer() {
                 {items.map((l) => (
                   <li key={l}>
                     <a
-                      href="#catalogo"
+                      href={cat === "Ayuda" && l === "Políticas de compra" ? "#politicas" : "#catalogo"}
                       className="text-sm text-brand-foreground/70 hover:text-brand-foreground hover:underline transition-colors"
                     >
                       {l}
@@ -90,7 +95,7 @@ export function Footer() {
           <div className="flex-1">
             <h4 className="font-display font-bold text-lg">Recibe novedades del catálogo</h4>
             <p className="text-sm text-brand-foreground/70">
-              Nuevos modelos, ofertas corporativas y guías de seguridad en tu correo.
+              Nuevos modelos Spessoto y New Holland, ofertas B2B y guías de seguridad en tu correo.
             </p>
           </div>
           <form
@@ -99,7 +104,7 @@ export function Footer() {
           >
             <Input
               type="email"
-              placeholder="tu@correo.com"
+              placeholder="tu@empresa.com"
               className="bg-brand-foreground/10 border-brand-foreground/20 text-brand-foreground placeholder:text-brand-foreground/50 w-full sm:w-56"
             />
             <Button type="submit" className="bg-amber-accent text-amber-foreground hover:bg-amber-accent/90 font-semibold">
@@ -112,11 +117,11 @@ export function Footer() {
       {/* Pie legal */}
       <div className="border-t border-brand-foreground/10">
         <div className="mx-auto max-w-7xl px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-brand-foreground/60">
-          <p>© 2026 New Holland Safety Footwear · Licencia oficial Spessoto · Todos los derechos reservados.</p>
+          <p>© 2026 Brasil MX · Distribuidor B2B en México · Marcas Spessoto (desde 1915) y New Holland. Todos los derechos reservados.</p>
           <div className="flex items-center gap-4">
-            <a href="#" className="hover:text-brand-foreground transition-colors">Términos</a>
-            <a href="#" className="hover:text-brand-foreground transition-colors">Privacidad</a>
-            <a href="#" className="hover:text-brand-foreground transition-colors">Cookies</a>
+            <a href="#politicas" className="hover:text-brand-foreground transition-colors">Términos</a>
+            <a href="#politicas" className="hover:text-brand-foreground transition-colors">Privacidad</a>
+            <a href="#politicas" className="hover:text-brand-foreground transition-colors">Cookies</a>
           </div>
         </div>
       </div>

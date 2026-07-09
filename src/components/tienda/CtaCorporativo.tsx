@@ -56,8 +56,8 @@ export function CtaCorporativo() {
                 ¿Necesitas equipar a todo tu equipo?
               </h2>
               <p className="mt-3 text-brand-foreground/80 text-base sm:text-lg max-w-md">
-                Cotizaciones especiales para pedidos de 10 a 100+ pares. Precios por volumen,
-                gestión de tallas por trabajador y facturación a empresa.
+                Cotizaciones B2B para pedidos de 10 a 100+ pares. Marcas Spessoto y New Holland,
+                precios por volumen, gestión de tallas por trabajador y facturación a empresa (CFDI).
               </p>
               <ul className="mt-5 space-y-1.5 text-sm">
                 {[

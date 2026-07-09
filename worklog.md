@@ -59,3 +59,45 @@ Stage Summary:
 - Requisitos del usuario confirmados: web en español, 22 modelos traducidos al español, tallas seleccionables para compra en línea, diseño basado en colores/tipografía/logo de los PDF de la marca, características de seguridad y uso resaltadas por modelo
 - Flujo de compra completo operativo: catálogo → filtro por uso → detalle → selector de material/talla → carrito → checkout → confirmación con ID de pedido persistido en API
 - Lint limpio, dev server estable en puerto 3000
+
+---
+Task ID: 3
+Agent: main (Z.ai Code) — reconstrucción por marca
+Task: Hacer el sitio congruente: fotos por modelo, tallas exactas por modelo (del Excel), distinción de marca Spessoto (logo principal) vs New Holland (logo en su sección), enfoque B2B México, datos de contacto 229 464 8962 / ventas@brasilmx.mx, y una sección "Políticas" después de catálogo/uso/seguridad/empresa.
+
+Work Log:
+- Parseado el Excel con openpyxl: tallas exactas por modelo (X en columnas 34-46). Ej: NHF 2295 = tallas 34-37; NHF 2520 = solo 46; ENH 1012 = 34,35,46. Para NHF 2545 y ENH 2201 (sin X) se asignó rango estándar por género.
+- Leído el sitio lojaspessoto.com.br/categoria/linha-premium/ con web-reader: marca Spessoto "Desde 1915", línea premium con modelos Chelsea, Palermo y Vira Francesa (precios en BRL).
+- Generadas 7 imágenes nuevas con image-generation skill: Cascavel (bota alta negra), Casaleone (agrícola nobuck caramelo), Bicolor (café/arena), Fósil (chocolate texturizado), Chelsea Spessoto, Palermo Spessoto, Vira Francesa Spessoto, más un hero B2B (equipo industrial en México). Reutilizadas 7 imágenes existentes por arquetipo, mapeadas por tipo+color+género a cada modelo.
+- Reconstruido src/data/productos.ts: añadido campo `marca: "Spessoto" | "New Holland"` y `linea: "dama"|"caballero"|"unisex"`. 22 modelos New Holland (NHF/ENH del Excel) con tallas exactas + 3 modelos Spessoto premium (Chelsea $89, Palermo $95, Vira Francesa $85) con tallas 38-45. Total 25 modelos.
+- Creado Logo.tsx con tres componentes: SpessotoLogo (principal, "DESDE 1915 · Brasil MX", monograma S azul+ámbar), NewHollandLogo (secundario, emblema hoja azul #003f87), y Logo compuesto (Spessoto | New Holland).
+- Reconstruido Header.tsx: barra de anuncio B2B México, logo compuesto Spessoto+NH, teléfono 229 464 8962 visible, menú con "Políticas".
+- Reconstruido Hero.tsx: imagen B2B team, badges de ambas marcas, messaging "Calzado de seguridad para la industria mexicana", indicadores B2B/MX, contacto visible.
+- Reconstruido Catalogo.tsx: añadido filtro por marca (Todas/Spessoto/New Holland) + línea (Dama/Cab./Unisex) + categoría. Reordenado por uso con glow + transición 350ms mantenido.
+- Reconstruido TarjetaProducto.tsx: badge de marca en la foto (Spessoto azul marino / New Holland blanco), línea dama/caballero/unisex, swatches de material, tallas disponibles mostradas (rango o lista + conteo).
+- Actualizado DetalleProducto.tsx: badge de marca en el header, selector de talla con las tallas exactas del modelo.
+- Creado PoliticasSection.tsx: 8 políticas B2B (Ventas B2B y pedidos mínimos, Solicitud de cotización, Formas de pago, Envíos, Disponibilidad/producción, Garantía EPI, Cambios y devoluciones, Facturación CFDI) + bloque de contacto con teléfono y email.
+- Reconstruido Footer.tsx: Spessoto como logo principal + New Holland secundario, contacto 229 464 8962 / ventas@brasilmx.mx / México, enlaces a #politicas.
+- Actualizado layout.tsx metadata: "Brasil MX · Spessoto & New Holland | Calzado de Seguridad B2B México".
+- Actualizado page.tsx: orden Hero → Catalogo → Seguridad → GuiaTallas → Testimonios → CtaCorporativo → PoliticasSection.
+- Actualizado CtaCorporativo.tsx: messaging B2B con ambas marcas y facturación CFDI.
+- `bun run lint` → sin errores. Dev server en puerto 3000 (GET / 200, sin errores de runtime).
+- Verificación con Agent Browser:
+  - Título correcto "Brasil MX · Spessoto & New Holland | Calzado de Seguridad B2B México"
+  - VLM: Spessoto como logo principal con "Desde 1915", New Holland secundario, hero B2B con equipo, contacto 229 464 8962 y ventas@brasilmx.mx visibles, tarjetas con badge de marca/swatches/tallas/precios USD, sin problemas de render
+  - Filtro marca Spessoto → muestra solo 3 modelos premium (Chelsea, Palermo, Vira Francesa)
+  - 25 modelos totales (22 NH + 3 Spessoto)
+  - Tallas exactas verificadas: NHF 2295 muestra solo 34,35,36,37 (igual que el Excel)
+  - Modal de detalle muestra badge NEW HOLLAND + Línea Dama
+  - Sección "Políticas comerciales" con 8 políticas numeradas + bloque de contacto (229 464 8962, ventas@brasilmx.mx)
+  - Footer con Spessoto principal + New Holland secundario + contacto + "DESDE 1915 · BRASIL MX"
+  - VLM final: Spessoto logo principal arriba y footer, New Holland secundario, sección Políticas con 8 tarjetas B2B, badges de marca en tarjetas, sin imágenes rotas ni problemas de layout
+
+Stage Summary:
+- Sitio reconstruido con distinción de marca: Spessoto (marca principal, "Desde 1915", Brasil MX) y New Holland (línea con licencia, logo secundario)
+- 25 modelos con fotos que corresponden a cada arquetipo (tipo+color+género), tallas EXACTAS por modelo según el Excel, precios USD
+- Línea premium Spessoto añadida (Chelsea, Palermo, Vira Francesa) desde lojaspessoto.com.br
+- Enfoque B2B México: pedido mínimo 10 pares, descuentos por volumen, cotización, facturación CFDI, envíos a todo México
+- Sección "Políticas" (#politicas) después de catálogo/uso/seguridad/empresa con 8 políticas comerciales B2B
+- Contacto actualizado en toda la web: 229 464 8962 · ventas@brasilmx.mx
+- Lint limpio, dev server estable, verificado end-to-end con Agent Browser
