@@ -27,3 +27,35 @@ Stage Summary:
 - Interacciones pulidas: parallax en hero, etiquetas de uso con glow y reordenado, testimonios expandibles, confirmaciones deslizantes
 - API funcional: /api/productos y /api/pedido (POST devuelve ID de pedido)
 - Verificado end-to-end con Agent Browser
+
+---
+Task ID: 2
+Agent: main (Z.ai Code) — verificación
+Task: Verificar end-to-end el sitio de calzado de seguridad New Holland con Agent Browser, confirmando que cubre todos los requisitos del usuario (web en español, modelos traducidos, tallas para compra, diseño basado en los PDF de la marca, características de seguridad y uso resaltadas).
+
+Work Log:
+- Re-examinados los 3 archivos subidos (xlsx de precios + 2 PDF de catálogo) para confirmar marca NEW HOLLAND, color azul corporativo, 22 modelos NHF/ENH con materiales en portugués y precios USD
+- Revisados todos los componentes existentes en src/components/tienda/ (Header, Hero, Catalogo, TarjetaProducto, DetalleProducto, CarritoDrawer, Checkout, SeguridadSection, GuiaTallas, Testimonios, CtaCorporativo, Footer, Logo) y el archivo de datos src/data/productos.ts (22 modelos con nombres ES, materiales traducidos, tallas, precios USD, seguridad[] y usoTags[])
+- Confirmado que la implementación ya cubre los requisitos: idioma español, modelos traducidos (NAPA→Napa, NOBUCK→Nobuck, CRAZY→Crazy, FLOATER→Floater, MEL→Miel, CONHAQUE→Coñac, MARROM→Marrón, PRETO→Negro), selector de tallas, marca visual basada en los PDF (azul NH + acento ámbar + logo hoja + Barlow Condensed), características de seguridad destacadas por modelo
+- Ejecutado `bun run lint` → sin errores
+- Dev server corriendo en puerto 3000 (GET / 200)
+- Verificación con Agent Browser (GLM-4.6V para capturas):
+  - Página carga sin errores de consola ni de página; título correcto "New Holland Safety Footwear México | Calzado de Seguridad"
+  - VLM sobre captura completa: pulido alto, identidad de marca cohesiva, hero impactante, tarjetas claras, sin problemas de render, footer al pie
+  - Hero con parallax por cursor (código confirmado en Hero.tsx)
+  - Etiquetas de uso (Obra/Industrial/Campo/...) con glow al hover y reordenado de productos coincidentes arriba — verificado haciendo clic en "Obra": los modelos con tag Obra subieron al inicio
+  - Modal de detalle de producto: 6 swatches de material, selector de tallas 38-47, control de cantidad, precio dinámico ("Añadir · $29.80")
+  - Add-to-cart → drawer de carrito con artículo (Cascavel, Nobuck Caramelo, Talla 42, $29.80), cálculo de envío correcto ("Te faltan $170.20 USD para envío gratis")
+  - Checkout: formulario completo → POST /api/pedido 200 → confirmación deslizante con ID de pedido NH-MRD1ZUD4, total $44.80 USD
+  - Verificado en backend: GET /api/pedido devuelve el pedido persistido (cliente Juan Pérez)
+  - Testimonios: tarjeta expandible revela cita con animación de comillas ("La Cascavel con puntera de acero aguantó el ritmo de obra...") + atribución (Roberto Mendoza, Jefe de Seguridad)
+  - Cotización corporativa: formulario → confirmación deslizante personalizada ("Gracias, Minera del Norte...")
+  - Responsividad móvil (iPhone 14): layout limpio, menú hamburguesa, sin scroll horizontal, header con logo/menú/carrito visible
+  - Footer sticky al pie (mt-auto + min-h-screen flex flex-col)
+- Dev log: todas las respuestas 200, POST/GET /api/pedido 200, sin errores de runtime ni hidratación
+
+Stage Summary:
+- Sitio verificado end-to-end con Agent Browser: todas las interacciones funcionan, sin errores
+- Requisitos del usuario confirmados: web en español, 22 modelos traducidos al español, tallas seleccionables para compra en línea, diseño basado en colores/tipografía/logo de los PDF de la marca, características de seguridad y uso resaltadas por modelo
+- Flujo de compra completo operativo: catálogo → filtro por uso → detalle → selector de material/talla → carrito → checkout → confirmación con ID de pedido persistido en API
+- Lint limpio, dev server estable en puerto 3000
