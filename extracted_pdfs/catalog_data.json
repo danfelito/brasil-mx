@@ -1,0 +1,492 @@
+{
+  "bretao_p1": {
+    "label": "bretao_p1",
+    "data": {
+      "page_type": "cover",
+      "brand_colors": {
+        "primary": "#0047AB",
+        "secondary": "#FFFFFF",
+        "accent": "#F0F0F0"
+      },
+      "models": [
+        {
+          "code": "NHF 2243",
+          "name": "Torreano",
+          "gender": "feminino",
+          "type": "botina",
+          "materials": [
+            "couro sintético"
+          ],
+          "sizes": "34-46",
+          "safety_features": [
+            "proteção de ponta",
+            "antiderrapante"
+          ],
+          "intended_use": "trabalho em campo",
+          "price": "R$ 299,90"
+        },
+        {
+          "code": "ENH 2201",
+          "name": "Cascavel",
+          "gender": "masculino",
+          "type": "bota",
+          "materials": [
+            "couro genuíno"
+          ],
+          "sizes": "38-48",
+          "safety_features": [
+            "proteção de ponta",
+            "isolamento elétrico"
+          ],
+          "intended_use": "construção civil",
+          "price": "R$ 499,90"
+        }
+      ],
+      "raw_text": "NEW HOLLAND\nNHF 2243 Torreano\nfeminino\nbotina\ncouro sintético\n34-46\nproteção de ponta\nantiderrapante\ntrabalho em campo\nR$ 299,90\nENH 2201 Cascavel\nmasculino\nbota\ncouro genuíno\n38-48\nproteção de ponta\nisolamento elétrico\nconstrução civil\nR$ 499,90"
+    }
+  },
+  "bretao_p2": {
+    "label": "bretao_p2",
+    "data": {
+      "page_type": "product",
+      "brand_colors": {
+        "primary": "#003366",
+        "secondary": "#ffffff",
+        "accent": "#f8d56b"
+      },
+      "models": [
+        {
+          "code": "ENH 2201",
+          "name": "Torreano",
+          "gender": "masculino",
+          "type": "botina",
+          "materials": [
+            "NOBUCK"
+          ],
+          "sizes": "34 AO 47",
+          "safety_features": [
+            "Sola PU injetada"
+          ],
+          "intended_use": null,
+          "price": "R$ 149,90"
+        }
+      ],
+      "raw_text": "NEW HOLLAND\nNOBUCK\nAZUL\nFLOATER\nCAFE\nR$ 149,90\nSola PU\ninjetada\nNOBUCK\nCARAMELO\nNOBUCK\nMARROM\nNOBUCK\nPRETO\nNOBUCK\nCHOCOLATE\nENH 2201 BOTINA TORREANO 34 AO 47"
+    }
+  },
+  "bretao_p3": {
+    "label": "bretao_p3",
+    "error": "API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"
+  },
+  "bretao_p4": {
+    "label": "bretao_p4",
+    "error": "API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"
+  },
+  "bretao_p5": {
+    "label": "bretao_p5",
+    "data": {
+      "page_type": "product",
+      "brand_colors": {
+        "primary": "#003366",
+        "secondary": "#FFCC00",
+        "accent": "#FF6600"
+      },
+      "models": [
+        {
+          "code": "ENH 1012",
+          "name": "Casaleone",
+          "gender": "masculino",
+          "type": "botina",
+          "materials": [
+            "Nobuck"
+          ],
+          "sizes": "36 AO 45",
+          "safety_features": [
+            "Sola Latex costurado"
+          ],
+          "intended_use": "Agrícola",
+          "price": "R$ 149,90"
+        }
+      ],
+      "raw_text": "NEW HOLLAND\nR$ 149,90\nSola Latex\ncosturado\nNOBUCK\nCARAMELO\nNOBUCK\nMARROM\nNOBUCK\nCHOCOLATE\nENH 1012 BOTINA AGRÍCOLA CASALEONE 36 AO 45"
+    }
+  },
+  "bretao_p6": {
+    "label": "bretao_p6",
+    "data": {
+      "page_type": "product",
+      "brand_colors": {
+        "primary": "#003366",
+        "secondary": "#ffffff",
+        "accent": "#f5a623"
+      },
+      "models": [
+        {
+          "code": "ENH 2513",
+          "name": "BOTINA CASALEONE",
+          "gender": "masculino",
+          "type": "botina",
+          "materials": [
+            "NOBUCK"
+          ],
+          "sizes": "36 AO 45",
+          "safety_features": [
+            "Sola Latex Preta costurada"
+          ],
+          "intended_use": "",
+          "price": "R$ 138,90"
+        }
+      ],
+      "raw_text": "NEW HOLLAND\nSola Latex Preta\ncosturada\nNOBUCK\nCHOCOLATE\nR$ 138,90\nNOBUCK\nCARAMELO\nNOBUCK\nMARROM\nENH 2513 BOTINA CASALEONE 36 AO 45"
+    }
+  },
+  "bretao_p7": {
+    "label": "bretao_p7",
+    "error": "API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"
+  },
+  "bretao_p8": {
+    "label": "bretao_p8",
+    "error": "API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"
+  },
+  "bretao_p9": {
+    "label": "bretao_p9",
+    "data": {
+      "page_type": "back",
+      "brand_colors": {
+        "primary": "#003399",
+        "secondary": "#ffffff",
+        "accent": "#003399"
+      },
+      "models": [],
+      "raw_text": "NEW HOLLAND\nS SPESSOTO\nLICENCIADO OFICIAL NEW HOLLAND\nwww.lojaspessoto.com.br\nCONTATOS: \n paulo@flowup.com.br 16 99129-0621\nneto@flowup.com.br 16 99198-7977\n16 3721-1348 Franca - SP"
+    }
+  },
+  "serdir_p1": {
+    "label": "serdir_p1",
+    "data": {
+      "page_type": "cover",
+      "brand_colors": {
+        "primary": "#002B5C",
+        "secondary": "#FFFFFF",
+        "accent": "#6B8CBF"
+      },
+      "models": [],
+      "raw_text": "NEW HOLLAND\nSER - 2026\nSISTEMA DE ENTREGA RÁPIDA"
+    }
+  },
+  "serdir_p2": {
+    "label": "serdir_p2",
+    "error": "API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"
+  },
+  "serdir_p3": {
+    "label": "serdir_p3",
+    "error": "API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"
+  },
+  "serdir_p4": {
+    "label": "serdir_p4",
+    "data": {
+      "page_type": "product",
+      "brand_colors": {
+        "primary": "#003366",
+        "secondary": "#663300",
+        "accent": "#333333"
+      },
+      "models": [
+        {
+          "code": "NHF 2507",
+          "name": "NAPA HAVANA",
+          "gender": "feminino",
+          "type": "botina",
+          "materials": [
+            "NAPA"
+          ],
+          "sizes": "34 AO 40",
+          "safety_features": [],
+          "intended_use": "",
+          "price": "R$ 252,00"
+        }
+      ],
+      "raw_text": "NEW HOLLAND\nFeminino\nR$ 252,00\nNHF 2507 NAPA HAVANA 34 AO 40"
+    }
+  },
+  "serdir_p5": {
+    "label": "serdir_p5",
+    "data": {
+      "page_type": "product",
+      "brand_colors": {
+        "primary": "#003366",
+        "secondary": "#ffffff",
+        "accent": "#000000"
+      },
+      "models": [
+        {
+          "code": "NHF 2524",
+          "name": "NAPA TOSCANA",
+          "gender": "feminino",
+          "type": "botina",
+          "materials": [
+            "NAPA"
+          ],
+          "sizes": "34 AO 40",
+          "safety_features": [],
+          "intended_use": "",
+          "price": "R$ 267,00"
+        }
+      ],
+      "raw_text": "NEW HOLLAND\nFeminino\nR$ 267,00\nNHF 2524 NAPA TOSCANA 34 AO 40"
+    }
+  },
+  "serdir_p6": {
+    "label": "serdir_p6",
+    "error": "API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"
+  },
+  "serdir_p7": {
+    "label": "serdir_p7",
+    "error": "API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"
+  },
+  "serdir_p8": {
+    "label": "serdir_p8",
+    "data": {
+      "page_type": "product",
+      "brand_colors": {
+        "primary": "#003366",
+        "secondary": "#d4a017",
+        "accent": "#000000"
+      },
+      "models": [
+        {
+          "code": "ENH 2201",
+          "name": "NOBUCK CARAMELO",
+          "gender": "masculino",
+          "type": "botina",
+          "materials": [
+            "NOBUCK"
+          ],
+          "sizes": "34 AO 47",
+          "safety_features": [
+            "SOLADO INJETADO"
+          ],
+          "intended_use": "",
+          "price": "R$ 159,90"
+        }
+      ],
+      "raw_text": "NEW HOLLAND\nSOLADO INJETADO\nR$ 159,90\nENH 2201 NOBUCK CARAMELO 34 AO 47"
+    }
+  },
+  "serdir_p9": {
+    "label": "serdir_p9",
+    "data": {
+      "page_type": "product",
+      "brand_colors": {
+        "primary": "#003366",
+        "secondary": "#666666",
+        "accent": "#333333"
+      },
+      "models": [
+        {
+          "code": "ENH 2201",
+          "name": "NOBUCK CHOCOLATE",
+          "gender": "masculino",
+          "type": "botina",
+          "materials": [
+            "NOBUCK"
+          ],
+          "sizes": "34 AO 47",
+          "safety_features": [
+            "SOLADO INJETADO"
+          ],
+          "intended_use": null,
+          "price": "R$ 159,90"
+        }
+      ],
+      "raw_text": "NEW HOLLAND\nSOLADO INJETADO\nR$ 159,90\nENH 2201 NOBUCK CHOCOLATE 34 AO 47"
+    }
+  },
+  "serdir_p10": {
+    "label": "serdir_p10",
+    "error": "API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"
+  },
+  "serdir_p11": {
+    "label": "serdir_p11",
+    "error": "API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"
+  },
+  "serdir_p12": {
+    "label": "serdir_p12",
+    "data": {
+      "page_type": "product",
+      "brand_colors": {
+        "primary": "#003a7a",
+        "secondary": "#f5f5f5",
+        "accent": "#d4a76a"
+      },
+      "models": [
+        {
+          "code": "NHF 2243",
+          "name": "Botina Premium Vira Francesa",
+          "gender": "feminino",
+          "type": "botina",
+          "materials": [
+            "Nobuck premium",
+            "napa vacum bovino",
+            "sola de couro",
+            "solado de borracha natural vulcanizada",
+            "palmilha interna de P.U."
+          ],
+          "sizes": "34-46",
+          "safety_features": [
+            "vulcanização do cabedal com a sola de borracha e entresola",
+            "segunda costura manual"
+          ],
+          "intended_use": "trabalho",
+          "price": null
+        }
+      ],
+      "raw_text": "NEW HOLLAND\nBOTINA PREMIUM VIRA FRANCESA\nA botina Francesa, como é conhecida no Brasil, é um produto bastante resistente.\nFeita Manualmente, seu processo é trabalhoso e totalmente artesanal.\nComeça na seleção dos materiais nobres do cabedal que é feito em Nobuck premium, sendo forrado no napa vacum bovino.\nSua palmilha de montagem é de sola de couro, que é costurado em solado de borracha natural vulcanizada. A sua pamilha interna de P.U. conforto memória.\nDepois de montada na forma, ela é costurada manualmente na palmilha e novamente montada e colada na sola, que recebe a segunda costura manual, reforçando a segurança da vulcanização do cabedal com a sola de borracha e entresola.\nEssa característica que nomina a botina, lhe dá resistência e durabilidade notória neste produto.\nBOTINA PREMIUM VIRA FRANCESA"
+    }
+  },
+  "serdir_p13": {
+    "label": "serdir_p13",
+    "data": {
+      "page_type": "product",
+      "brand_colors": {
+        "primary": "#003366",
+        "secondary": "#ffffff",
+        "accent": "#d4af37"
+      },
+      "models": [
+        {
+          "code": "NHF 2520",
+          "name": "VIRA FRANCESA",
+          "gender": "feminino",
+          "type": "botina",
+          "materials": [
+            "Couro"
+          ],
+          "sizes": "34 AO 45",
+          "safety_features": [
+            "Proteção contra impactos",
+            "Proteção contra compressão"
+          ],
+          "intended_use": "Ambiente de trabalho",
+          "price": "R$ 339,00"
+        }
+      ],
+      "raw_text": "NEW HOLLAND\nVIRA FRANCESA\nR$ 339,00\nNHF 2520 FLOATER BROWN 34 AO 45"
+    }
+  },
+  "serdir_p14": {
+    "label": "serdir_p14",
+    "data": {
+      "page_type": "product",
+      "brand_colors": {
+        "primary": "#003366",
+        "secondary": "#ffffff",
+        "accent": "#c49a3b"
+      },
+      "models": [
+        {
+          "code": "NHF 2520",
+          "name": "VIRA FRANCESA",
+          "gender": "feminino",
+          "type": "botina",
+          "materials": [
+            "NOBUCK"
+          ],
+          "sizes": "34 AO 45",
+          "safety_features": [],
+          "intended_use": "",
+          "price": "R$ 339,00"
+        }
+      ],
+      "raw_text": "NEW HOLLAND\nVIRA FRANCESA\nR$ 339,00\nNHF 2520 NOBUCK CARAMELO 34 AO 45"
+    }
+  },
+  "serdir_p15": {
+    "label": "serdir_p15",
+    "error": "API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"
+  },
+  "serdir_p16": {
+    "label": "serdir_p16",
+    "data": {
+      "page_type": "product",
+      "brand_colors": {
+        "primary": "#003366",
+        "secondary": "#663300",
+        "accent": "#0066cc"
+      },
+      "models": [
+        {
+          "code": "ENH 2278",
+          "name": "FLOATER CAFE",
+          "gender": "masculino",
+          "type": "botina",
+          "materials": [
+            "couro"
+          ],
+          "sizes": "37 AO 44",
+          "safety_features": [
+            "sola antiderrapante"
+          ],
+          "intended_use": "trabalho",
+          "price": "R$ 270,00"
+        }
+      ],
+      "raw_text": "NEW HOLLAND\nR$ 270,00\nENH 2278 FLOATER CAFE 37 AO 44"
+    }
+  },
+  "serdir_p17": {
+    "label": "serdir_p17",
+    "data": {
+      "page_type": "product",
+      "brand_colors": {
+        "primary": "#003366",
+        "secondary": "#4d4d4d",
+        "accent": "#d4a017"
+      },
+      "models": [
+        {
+          "code": "NHF 3023",
+          "name": "NOBUCK CARAMELO",
+          "gender": "feminino",
+          "type": "botina",
+          "materials": [
+            "nobuck"
+          ],
+          "sizes": "37 AO 44",
+          "safety_features": [],
+          "intended_use": "",
+          "price": "R$ 249,00"
+        }
+      ],
+      "raw_text": "NEW HOLLAND\nR$ 249,00\nNHF 3023 NOBUCK CARAMELO 37 AO 44"
+    }
+  },
+  "serdir_p18": {
+    "label": "serdir_p18",
+    "error": "API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"
+  },
+  "serdir_p19": {
+    "label": "serdir_p19",
+    "error": "API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"
+  },
+  "serdir_p20": {
+    "label": "serdir_p20",
+    "error": "API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"
+  },
+  "serdir_p21": {
+    "label": "serdir_p21",
+    "error": "API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"
+  },
+  "serdir_p22": {
+    "label": "serdir_p22",
+    "error": "API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"
+  },
+  "serdir_p23": {
+    "label": "serdir_p23",
+    "error": "API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"
+  },
+  "serdir_p24": {
+    "label": "serdir_p24",
+    "error": "API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"
+  }
+}
