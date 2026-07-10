@@ -66,15 +66,14 @@ export function CarritoDrawer() {
                     <>
                       <Truck className="h-4 w-4 text-brand mt-0.5 shrink-0" />
                       <p className="text-xs text-foreground/80">
-                        <span className="font-semibold text-brand">¡Envío gratis!</span> Tu pedido
-                        supera los $200 USD.
+                        <span className="font-semibold text-brand">¡Envío gratis!</span> Tu pedido supera el mínimo de compra.
                       </p>
                     </>
                   ) : (
                     <>
                       <Truck className="h-4 w-4 text-muted-foreground mt-0.5 shrink-0" />
                       <p className="text-xs text-muted-foreground">
-                        Te faltan <span className="font-semibold text-brand">${(200 - sub).toFixed(2)} USD</span> para
+                        <span className="font-semibold text-brand">${(200 - sub).toFixed(2)} MXN</span> para envío gratis.
                         envío gratis.
                       </p>
                     </>

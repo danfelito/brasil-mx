@@ -137,7 +137,7 @@ export function TarjetaProducto({
             <div className="text-[0.65rem] text-muted-foreground uppercase tracking-wide">Precio B2B</div>
             <div className="font-display font-extrabold text-2xl text-foreground leading-none">
               ${producto.precio.toFixed(2)}
-              <span className="text-xs font-bold text-muted-foreground ml-1">USD</span>
+              <span className="text-xs font-bold text-muted-foreground ml-1">MXN</span>
             </div>
           </div>
           <Button

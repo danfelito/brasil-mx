@@ -162,7 +162,7 @@ export function DetalleProducto({
               <span className="font-display font-extrabold text-3xl text-foreground">
                 ${producto.precio.toFixed(2)}
               </span>
-              <span className="text-sm font-bold text-muted-foreground">USD / par</span>
+              <span className="text-sm font-bold text-muted-foreground">MXN / par</span>
             </div>
 
             <Separator />

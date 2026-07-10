@@ -1,10 +1,10 @@
 // Catálogo de calzado de seguridad — Brasil MX (distribuidor B2B en México)
 // Marcas: Spessoto (marca principal, desde 1915) y New Holland (línea con licencia).
 // Fuente de datos:
-//  - Tabela NH 02-2026 Mexico (USD) 10.xlsx  → modelos New Holland, tallas exactas y precios USD
+//  - Tabela NH 02-2026 Mexico 10.xlsx  → modelos New Holland, tallas exactas y precios MXN
 //  - Catálogos NH 2026 (Bretão / SER-Dir)   → imagen y características de cada modelo NH
 //  - lojaspessoto.com.br/categoria/linha-premium/ → línea premium Spessoto (Chelsea, Palermo, Vira Francesa)
-// Precios en USD. Materiales traducidos del portugués al español.
+// Precios en MXN (tipo de cambio: 1 USD = 17.54 MXN, actualizado 2026-07-10). Materiales traducidos del portugués al español.
 
 export type Marca = "Spessoto" | "New Holland";
 
@@ -23,7 +23,7 @@ export type Producto = {
   linea: "dama" | "caballero" | "unisex";
   tipo: string; // botina, bota
   categoria: string; // premium, ejecutiva, industrial, agrícola, económica
-  precio: number; // USD
+  precio: number; // MXN
   imagen: string; // ruta de imagen
   materiales: MaterialOption[];
   tallas: number[]; // tallas disponibles exactas por modelo
@@ -84,7 +84,7 @@ const SEG = {
 };
 
 export const productos: Producto[] = [
-  // ====================== LÍNEA NEW HOLLAND (con licencia Spessoto) ======================
+  // ====================== LÍNEA NEW HOLLAND - DAMA ======================
   // --- NHF: línea dama / ejecutiva / premium ---
   {
     id: "nhf-2243",
@@ -94,7 +94,7 @@ export const productos: Producto[] = [
     linea: "dama",
     tipo: "Botina",
     categoria: "Premium",
-    precio: 39,
+    precio: 684, // 39 USD
     imagen: "/products/boot-vira-francesa.png",
     materiales: [M.napaHavana, M.napaToscana],
     tallas: [41, 42, 43, 44, 45, 46],
@@ -122,7 +122,7 @@ export const productos: Producto[] = [
     linea: "dama",
     tipo: "Botina",
     categoria: "Premium",
-    precio: 39,
+    precio: 684, // 39 USD
     imagen: "/products/boot-floater-brown.png",
     materiales: [M.floaterBrown, M.floaterCafe, M.nobuckCaramelo],
     tallas: [41, 42, 43, 44, 45, 46],
@@ -142,6 +142,59 @@ export const productos: Producto[] = [
     destacado: true,
   },
   {
+    id: "nhf-2520",
+    codigo: "NHF 2520",
+    nombre: "Vira Francesa Dama",
+    marca: "New Holland",
+    linea: "dama",
+    tipo: "Botina",
+    categoria: "Premium",
+    precio: 954, // 54.4 USD
+    imagen: "/products/boot-vira-francesa.png",
+    materiales: [M.floaterBrown, M.nobuckCaramelo],
+    tallas: [46],
+    suela: "Caucho natural vulcanizada",
+    seguridad: [SEG.viraFrancesa, SEG.cauchoVulcanizado, SEG.costuraManual, SEG.antideslizante, SEG.amortiguacion, SEG.resistenteAceites],
+    uso: "Trabajo pesado de obra y campo",
+    usoTags: ["Obra", "Campo", "Industrial", "Pesado"],
+    descripcion:
+      "Botina Vira Francesa para dama, línea premium de máxima resistencia. Construcción vulcanizada con costura manual, ideal para trabajos pesados que exigen protección y durabilidad superior.",
+    destacados: [
+      "Línea premium Vira Francesa de máxima resistencia",
+      "Protección contra impactos y compresión",
+      "Suela vulcanizada antideslizante y resistente a aceites",
+    ],
+    rating: 4.9,
+    reseñas: 154,
+    destacado: true,
+  },
+  {
+    id: "nhf-2295",
+    codigo: "NHF 2295",
+    nombre: "Crazy Premium Dama",
+    marca: "New Holland",
+    linea: "dama",
+    tipo: "Botina",
+    categoria: "Premium",
+    precio: 864, // 49.2 USD
+    imagen: "/products/boot-crazy-dark.png",
+    materiales: [M.crazyCafe, M.crazyPreto, M.nobuckCaramelo],
+    tallas: [34, 35, 36, 37],
+    suela: "Caucho natural vulcanizada",
+    seguridad: [SEG.cauchoVulcanizado, SEG.antideslizante, SEG.amortiguacion, SEG.resistenteAceites],
+    uso: "Trabajo pesado industrial",
+    usoTags: ["Industrial", "Obra", "Pesado"],
+    descripcion:
+      "Botina premium para dama en cuero Crazy con suela vulcanizada de caucho natural. Máxima resistencia para trabajos pesados con protección superior.",
+    destacados: [
+      "Cuero Crazy de máxima resistencia",
+      "Suela vulcanizada de caucho natural",
+      "Protección superior para trabajo pesado",
+    ],
+    rating: 4.8,
+    reseñas: 67,
+  },
+  {
     id: "nhf-2507",
     codigo: "NHF 2507",
     nombre: "Napa Ejecutiva Dama",
@@ -149,7 +202,7 @@ export const productos: Producto[] = [
     linea: "dama",
     tipo: "Botina",
     categoria: "Ejecutiva",
-    precio: 40.6,
+    precio: 712, // 40.6 USD
     imagen: "/products/boot-women-napa.png",
     materiales: [M.napaCafe, M.napaHavana],
     tallas: [41, 42, 43, 44, 45, 46],
@@ -175,7 +228,7 @@ export const productos: Producto[] = [
     linea: "dama",
     tipo: "Botina",
     categoria: "Ejecutiva",
-    precio: 42.6,
+    precio: 747, // 42.6 USD
     imagen: "/products/boot-women-napa.png",
     materiales: [M.napaHavana, M.napaToscana],
     tallas: [41, 42, 43, 44, 45, 46],
@@ -201,7 +254,7 @@ export const productos: Producto[] = [
     linea: "dama",
     tipo: "Botina",
     categoria: "Ejecutiva",
-    precio: 42.6,
+    precio: 747, // 42.6 USD
     imagen: "/products/boot-women-napa.png",
     materiales: [M.napaCafe, M.napaHavana, M.napaToscana],
     tallas: [41, 42, 43, 44, 45, 46],
@@ -220,33 +273,6 @@ export const productos: Producto[] = [
     reseñas: 61,
   },
   {
-    id: "nhf-2520",
-    codigo: "NHF 2520",
-    nombre: "Vira Francesa Dama",
-    marca: "New Holland",
-    linea: "dama",
-    tipo: "Botina",
-    categoria: "Premium",
-    precio: 54.4,
-    imagen: "/products/boot-vira-francesa.png",
-    materiales: [M.floaterBrown, M.nobuckCaramelo],
-    tallas: [46],
-    suela: "Caucho natural vulcanizada",
-    seguridad: [SEG.viraFrancesa, SEG.cauchoVulcanizado, SEG.costuraManual, SEG.antideslizante, SEG.amortiguacion, SEG.resistenteAceites],
-    uso: "Trabajo pesado de obra y campo",
-    usoTags: ["Obra", "Campo", "Industrial", "Pesado"],
-    descripcion:
-      "Botina Vira Francesa para dama, línea premium de máxima resistencia. Construcción vulcanizada con costura manual, ideal para trabajos pesados que exigen protección y durabilidad superior.",
-    destacados: [
-      "Línea premium Vira Francesa de máxima resistencia",
-      "Protección contra impactos y compresión",
-      "Suela vulcanizada antideslizante y resistente a aceites",
-    ],
-    rating: 4.9,
-    reseñas: 154,
-    destacado: true,
-  },
-  {
     id: "nhf-2296",
     codigo: "NHF 2296",
     nombre: "Crazy Dama",
@@ -254,7 +280,7 @@ export const productos: Producto[] = [
     linea: "dama",
     tipo: "Botina",
     categoria: "Industrial",
-    precio: 42,
+    precio: 737, // 42 USD
     imagen: "/products/boot-crazy-dark.png",
     materiales: [M.crazyCafe, M.crazyPreto, M.nobuckCaramelo],
     tallas: [34, 35, 36, 37, 46],
@@ -280,7 +306,7 @@ export const productos: Producto[] = [
     linea: "dama",
     tipo: "Botina",
     categoria: "Económica",
-    precio: 24,
+    precio: 421, // 24 USD
     imagen: "/products/nh/boot-bicolor-cafe-arena.png",
     materiales: [M.cafeAreia],
     tallas: [34, 35, 36, 37, 45, 46],
@@ -306,7 +332,7 @@ export const productos: Producto[] = [
     linea: "dama",
     tipo: "Botina",
     categoria: "Industrial",
-    precio: 37.8,
+    precio: 662, // 37.8 USD
     imagen: "/products/boot-floater-brown.png",
     materiales: [M.floaterCafe],
     tallas: [34, 35, 36, 46],
@@ -332,7 +358,7 @@ export const productos: Producto[] = [
     linea: "dama",
     tipo: "Botina",
     categoria: "Industrial",
-    precio: 41.6,
+    precio: 730, // 41.6 USD
     imagen: "/products/nh/boot-fossil-chocolate.png",
     materiales: [M.fossilChocolate, M.fossilTan],
     tallas: [34, 35, 36, 46],
@@ -351,32 +377,6 @@ export const productos: Producto[] = [
     reseñas: 34,
   },
   {
-    id: "nhf-2295",
-    codigo: "NHF 2295",
-    nombre: "Crazy Premium Dama",
-    marca: "New Holland",
-    linea: "dama",
-    tipo: "Botina",
-    categoria: "Premium",
-    precio: 49.2,
-    imagen: "/products/boot-crazy-dark.png",
-    materiales: [M.crazyCafe, M.crazyPreto, M.nobuckCaramelo],
-    tallas: [34, 35, 36, 37],
-    suela: "Caucho natural vulcanizada",
-    seguridad: [SEG.cauchoVulcanizado, SEG.antideslizante, SEG.amortiguacion, SEG.resistenteAceites],
-    uso: "Trabajo pesado industrial",
-    usoTags: ["Industrial", "Obra", "Pesado"],
-    descripcion:
-      "Botina premium para dama en cuero Crazy con suela vulcanizada de caucho natural. Máxima resistencia para trabajos pesados con protección superior.",
-    destacados: [
-      "Cuero Crazy de máxima resistencia",
-      "Suela vulcanizada de caucho natural",
-      "Protección superior para trabajo pesado",
-    ],
-    rating: 4.8,
-    reseñas: 67,
-  },
-  {
     id: "nhf-3023",
     codigo: "NHF 3023",
     nombre: "Nobuck Dama",
@@ -384,7 +384,7 @@ export const productos: Producto[] = [
     linea: "dama",
     tipo: "Botina",
     categoria: "Industrial",
-    precio: 39,
+    precio: 684, // 39 USD
     imagen: "/products/boot-nobuck-caramel.png",
     materiales: [M.crazyCafe, M.crazyPreto, M.nobuckCaramelo],
     tallas: [34, 35, 36, 45, 46],
@@ -410,7 +410,7 @@ export const productos: Producto[] = [
     linea: "dama",
     tipo: "Botina",
     categoria: "Industrial",
-    precio: 40.8,
+    precio: 715, // 40.8 USD
     imagen: "/products/boot-crazy-dark.png",
     materiales: [M.crazyCafe, M.crazyPreto, M.nobuckCaramelo],
     tallas: [34, 35, 36, 37, 38, 39, 40],
@@ -436,7 +436,7 @@ export const productos: Producto[] = [
     linea: "dama",
     tipo: "Botina",
     categoria: "Industrial",
-    precio: 40.8,
+    precio: 715, // 40.8 USD
     imagen: "/products/boot-nobuck-caramel.png",
     materiales: [M.crazyCafe, M.nobuckCaramelo, M.nobuckZinco],
     tallas: [41, 42, 43, 44, 45, 46],
@@ -462,7 +462,7 @@ export const productos: Producto[] = [
     linea: "dama",
     tipo: "Botina",
     categoria: "Industrial",
-    precio: 36.8,
+    precio: 644, // 36.8 USD
     imagen: "/products/boot-floater-brown.png",
     materiales: [M.floaterBrown, M.floaterMel],
     tallas: [34, 35, 36, 37, 46],
@@ -481,7 +481,7 @@ export const productos: Producto[] = [
     reseñas: 52,
   },
 
-  // --- ENH: línea caballero ---
+  // ====================== LÍNEA NEW HOLLAND - CABALLERO ======================
   {
     id: "enh-2201",
     codigo: "ENH 2201",
@@ -490,7 +490,7 @@ export const productos: Producto[] = [
     linea: "caballero",
     tipo: "Bota",
     categoria: "Industrial",
-    precio: 29.8,
+    precio: 522, // 29.8 USD
     imagen: "/products/nh/boot-cascavel-black.png",
     materiales: [M.floaterCafe, M.nobuckAzulMarinho, M.nobuckCaramelo, M.niobuckChocolate, M.nobuckMarrom, M.nobuckPreto],
     tallas: [38, 39, 40, 41, 42, 43, 44, 45, 46],
@@ -518,7 +518,7 @@ export const productos: Producto[] = [
     linea: "caballero",
     tipo: "Botina",
     categoria: "Industrial",
-    precio: 43.8,
+    precio: 766, // 43.8 USD
     imagen: "/products/boot-floater-brown.png",
     materiales: [M.floaterBrown, M.floaterMel],
     tallas: [34, 35, 36, 45, 46],
@@ -544,7 +544,7 @@ export const productos: Producto[] = [
     linea: "caballero",
     tipo: "Botina",
     categoria: "Industrial",
-    precio: 43.8,
+    precio: 766, // 43.8 USD
     imagen: "/products/boot-floater-brown.png",
     materiales: [M.floaterCafe, M.floaterBrown],
     tallas: [34, 35, 36, 45, 46],
@@ -570,7 +570,7 @@ export const productos: Producto[] = [
     linea: "caballero",
     tipo: "Botina",
     categoria: "Agrícola",
-    precio: 29.8,
+    precio: 522, // 29.8 USD
     imagen: "/products/nh/boot-casaleone-caramel.png",
     materiales: [M.nobuckCaramelo, M.nobuckChocolate, M.nobuckMarrom],
     tallas: [34, 35, 46],
@@ -597,7 +597,7 @@ export const productos: Producto[] = [
     linea: "caballero",
     tipo: "Botina",
     categoria: "Agrícola",
-    precio: 28.4,
+    precio: 496, // 28.4 USD
     imagen: "/products/nh/boot-casaleone-caramel.png",
     materiales: [M.nobuckCaramelo, M.nobuckChocolate, M.nobuckMarrom],
     tallas: [34, 35, 46],
@@ -623,7 +623,7 @@ export const productos: Producto[] = [
     linea: "caballero",
     tipo: "Botina",
     categoria: "Industrial",
-    precio: 31.8,
+    precio: 557, // 31.8 USD
     imagen: "/products/boot-floater-brown.png",
     materiales: [M.floaterCafe, M.floaterConhaque, M.nobuckCaramelo, M.nobuckChocolate, M.nobuckMarrom],
     tallas: [46],
@@ -649,7 +649,7 @@ export const productos: Producto[] = [
     linea: "caballero",
     tipo: "Botina",
     categoria: "Industrial",
-    precio: 31.8,
+    precio: 557, // 31.8 USD
     imagen: "/products/boot-floater-brown.png",
     materiales: [M.floaterCafe, M.floaterConhaque, M.nobuckCaramelo, M.nobuckChocolate, M.nobuckMarrom],
     tallas: [46],
@@ -677,7 +677,7 @@ export const productos: Producto[] = [
     linea: "unisex",
     tipo: "Bota",
     categoria: "Premium",
-    precio: 89,
+    precio: 1561, // 89 USD
     imagen: "/products/spessoto/chelsea-cafe.png",
     materiales: [M.camurcaCafe, M.camurcaFerrugem],
     tallas: [38, 39, 40, 41, 42, 43, 44, 45],
@@ -705,7 +705,7 @@ export const productos: Producto[] = [
     linea: "unisex",
     tipo: "Botina",
     categoria: "Premium",
-    precio: 95,
+    precio: 1666, // 95 USD
     imagen: "/products/spessoto/palermo-havana.png",
     materiales: [M.napaCafe, M.napaHavana, M.napaToscana],
     tallas: [38, 39, 40, 41, 42, 43, 44, 45],
@@ -732,7 +732,7 @@ export const productos: Producto[] = [
     linea: "unisex",
     tipo: "Botina",
     categoria: "Premium",
-    precio: 85,
+    precio: 1491, // 85 USD
     imagen: "/products/spessoto/vira-francesa-floater.png",
     materiales: [M.floaterBrown, M.nobuckMarrom, M.nobuckTaupe],
     tallas: [38, 39, 40, 41, 42, 43, 44, 45],

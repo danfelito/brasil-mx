@@ -121,22 +121,22 @@ export function Checkout({ abierto, onCerrar }: { abierto: boolean; onCerrar: ()
                       <span className="text-foreground/80 truncate pr-2">
                         <span className="font-semibold">{i.codigo}</span> · {i.material} · T{i.talla} ×{i.cantidad}
                       </span>
-                      <span className="font-semibold whitespace-nowrap">${(i.precio * i.cantidad).toFixed(2)}</span>
+                      <span className="font-semibold whitespace-nowrap">${(i.precio * i.cantidad).toFixed(2)} MXN</span>
                     </div>
                   ))}
                   <Separator className="my-1.5" />
                   <div className="flex justify-between text-sm">
                     <span className="text-muted-foreground">Subtotal</span>
-                    <span className="font-semibold">${sub.toFixed(2)} USD</span>
+                    <span className="font-semibold">${sub.toFixed(2)} MXN</span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-muted-foreground">Envío</span>
-                    <span className="font-semibold">{envio === 0 ? "Gratis" : `$${envio.toFixed(2)} USD`}</span>
+                    <span className="font-semibold">{envio === 0 ? "Gratis" : `$${envio.toFixed(2)} MXN`}</span>
                   </div>
                   <div className="flex justify-between items-baseline pt-1">
                     <span className="font-bold">Total</span>
                     <span className="font-display font-extrabold text-xl text-brand">
-                      ${total.toFixed(2)} USD
+                      ${total.toFixed(2)} MXN
                     </span>
                   </div>
                 </div>
@@ -197,7 +197,7 @@ export function Checkout({ abierto, onCerrar }: { abierto: boolean; onCerrar: ()
                   className="w-full bg-brand text-brand-foreground hover:bg-brand/90 font-semibold h-11"
                 >
                   <ShieldCheck className="h-4 w-4" />
-                  Confirmar pedido · ${total.toFixed(2)} USD
+                  Confirmar pedido · ${total.toFixed(2)} MXN
                 </Button>
                 <p className="text-[0.7rem] text-center text-muted-foreground">
                   Al confirmar, recibes un número de pedido. No se cobra hasta confirmar disponibilidad.
@@ -249,7 +249,7 @@ export function Checkout({ abierto, onCerrar }: { abierto: boolean; onCerrar: ()
                 {pedidoId}
               </div>
               <p className="text-sm text-muted-foreground mb-1">
-                Total: <span className="font-bold text-foreground">${totalFinal.toFixed(2)} USD</span>
+                Total: <span className="font-bold text-foreground">${totalFinal.toFixed(2)} MXN</span>
               </p>
               <p className="text-xs text-muted-foreground mb-6 max-w-sm mx-auto">
                 Nuestro equipo de ventas te contactará en menos de 24 horas para confirmar la

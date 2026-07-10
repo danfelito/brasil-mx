@@ -155,7 +155,7 @@ export function Hero() {
               className="absolute -bottom-5 right-2 sm:right-6 rounded-2xl bg-brand text-brand-foreground px-4 py-3 shadow-xl"
             >
               <div className="text-[0.65rem] uppercase tracking-wider opacity-80">Desde</div>
-              <div className="font-display font-extrabold text-2xl leading-none">$24<span className="text-base font-bold"> USD</span></div>
+              <div className="font-display font-extrabold text-2xl leading-none">$421<span className="text-base font-bold"> MXN</span></div>
             </motion.div>
           </motion.div>
         </div>

@@ -23,7 +23,7 @@ const POLITICAS = [
     items: [
       "Brasil MX es un distribuidor B2B enfocado en empresas, constructoras, agrícolas e industria.",
       "Pedido mínimo por orden: 10 pares (mezcla de modelos, tallas y marcas libre).",
-      "Para pedidos de 10 a 49 pares: precio de catálogo en USD.",
+      "Para pedidos de 10 a 49 pares: precio de catálogo en MXN.",
       "Para 50 a 99 pares: 5% de descuento por volumen.",
       "Para 100 pares o más: cotización personalizada con descuento corporativo.",
     ],
@@ -45,7 +45,7 @@ const POLITICAS = [
     titulo: "3. Formas de pago",
     color: "var(--brand)",
     items: [
-      "Transferencia bancaria (SPEI) en MXN al tipo de cambio del día de facturación, o en USD.",
+      "Transferencia bancaria (SPEI) en MXN al tipo de cambio del día de facturación.",
       "50% de anticipo al confirmar el pedido; 50% contra entrega (o 100% anticipado para envíos foráneos).",
       "Empresas con crédito aprobado: pago a 15, 30 o 45 días según convenio.",
       "No se cobra ningún monto hasta confirmar disponibilidad de tallas y materiales.",
@@ -57,7 +57,7 @@ const POLITICAS = [
     titulo: "4. Envíos y entregas",
     color: "var(--amber-accent)",
     items: [
-      "Envío a todo México. Gratis en pedidos superiores a $200 USD dentro de la zona metropolitana.",
+      "Envío a todo México. Gratis en pedidos superiores a $200 MXN dentro de la zona metropolitana.",
       "Entrega en CDMX, Estado de México y principales ciudades: 2 a 4 días hábiles.",
       "Zonas foráneas y rurales: 4 a 8 días hábiles, sujeto a paquetería.",
       "Entrega directa en obra, almacén o bodega del cliente (solicítalo en la cotización).",
@@ -105,7 +105,7 @@ const POLITICAS = [
       "Factura CFDI 4.0 emitida por Brasil MX a nombre de la empresa compradora.",
       "Proporciona razón social, RFC, régimen fiscal, código postal y uso de CFDI al confirmar el pedido.",
       "La factura se envía por correo en un máximo de 3 días hábiles tras la entrega.",
-      "Precios en USD; el pago en MXN se convierte al tipo de cambio publicado por Banxico del día.",
+      "Precios en MXN; el pago se realiza al tipo de cambio publicado por Banxico del día.",
     ],
   },
 ];

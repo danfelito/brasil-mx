@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 const GARANTIAS = [
   { icon: ShieldCheck, titulo: "Calzado certificado EPI", texto: "Cumple norma de seguridad laboral" },
-  { icon: Truck, titulo: "Envío a todo México", texto: "Gratis en pedidos B2B +$200 USD" },
+  { icon: Truck, titulo: "Envío a todo México", texto: "Gratis en pedidos B2B +$200 MXN" },
   { icon: Headphones, titulo: "Asesoría B2B especializada", texto: "Selección de modelo por riesgo" },
   { icon: CreditCard, titulo: "Facturación empresarial", texto: "CFDI 4.0 · Crédito a 15/30/45 días" },
 ];
@@ -51,7 +51,7 @@ export function Footer() {
               Brasil MX — distribuidor B2B en México de calzado de seguridad certificado. Representamos
               la marca Spessoto (tradición desde 1915) y la línea con licencia New Holland. Botinas y
               botas para dama y caballero, para obra, industria, campo y uso ejecutivo. Catálogo 2026
-              con precios en USD para el mercado mexicano.
+              con precios en MXN para el mercado mexicano.
             </p>
             <div className="mt-5 space-y-1.5 text-sm text-brand-foreground/80">
               <a href="tel:2294648962" className="flex items-center gap-2 hover:text-brand-foreground transition-colors">
