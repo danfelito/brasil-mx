@@ -1,32 +1,29 @@
-# Build stage
-FROM node:20-alpine AS builder
-
+FROM node:20-alpine AS dependencies
 WORKDIR /app
+COPY package.json ./
+RUN npm install --no-audit --no-fund
 
-# Install ALL dependencies (including devDependencies for build)
-COPY package*.json ./
-RUN npm install
-
-# Copy source and build
+FROM node:20-alpine AS builder
+WORKDIR /app
+ENV NEXT_TELEMETRY_DISABLED=1
+COPY --from=dependencies /app/node_modules ./node_modules
 COPY . .
 RUN npm run build
 
-# Production stage - install only production dependencies
 FROM node:20-alpine AS runner
 WORKDIR /app
-
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
+ENV HOSTNAME=0.0.0.0
+ENV PORT=10000
 
-# Copy package files and install production deps only
-COPY package*.json ./
-RUN npm install --omit=dev
+RUN addgroup --system --gid 1001 nodejs \
+    && adduser --system --uid 1001 nextjs
 
-# Copy built artifacts
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
-COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-EXPOSE 3000
-
+USER nextjs
+EXPOSE 10000
 CMD ["node", "server.js"]
