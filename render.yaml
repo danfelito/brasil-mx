@@ -1,7 +1,17 @@
 services:
   - type: web
     name: brasil-mx
-    env: docker
+    runtime: docker
+    repo: https://github.com/danfelito/brasil-mx
+    branch: main
     dockerfilePath: ./Dockerfile
     dockerContext: .
-    autoDeploy: true
+    healthCheckPath: /
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOSTNAME
+        value: 0.0.0.0
+      - key: PORT
+        value: 10000
