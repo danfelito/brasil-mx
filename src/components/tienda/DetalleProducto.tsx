@@ -79,7 +79,7 @@ export function DetalleProducto({
 
   return (
     <Dialog open={abierto} onOpenChange={(o) => !o && onCerrar()}>
-      <DialogContent className="max-w-4xl p-0 overflow-hidden gap-0 max-h-[92vh] overflow-y-auto scrollbar-thin">
+      <DialogContent className="sm:max-w-4xl p-0 overflow-hidden gap-0 max-h-[92vh] overflow-y-auto scrollbar-thin">
         <DialogTitle className="sr-only">{producto.nombre}</DialogTitle>
         <DialogDescription className="sr-only">
           Detalle del producto {producto.codigo} con características de seguridad y selector de talla.
@@ -87,20 +87,12 @@ export function DetalleProducto({
 
         <div className="grid md:grid-cols-2">
           {/* Imagen */}
-          <div className="relative bg-muted/40 aspect-square md:aspect-auto md:min-h-[460px]">
+          <div className="relative bg-white aspect-square md:sticky md:top-0">
             <ProductPhoto
               src={producto.imagen}
               alt={`${producto.nombre} - ${producto.codigo}`}
               className="h-full w-full object-cover"
             />
-            <div className="absolute top-4 left-4 flex flex-col gap-1.5">
-              {producto.nuevo && (
-                <Badge className="bg-amber-accent text-amber-foreground font-bold w-fit">NUEVO 2026</Badge>
-              )}
-              {producto.destacado && (
-                <Badge className="bg-brand text-brand-foreground font-bold w-fit">DESTACADO</Badge>
-              )}
-            </div>
             <button
               onClick={onCerrar}
               className="md:hidden absolute top-3 right-3 h-9 w-9 rounded-full bg-background/90 flex items-center justify-center shadow"
@@ -219,8 +211,8 @@ export function DetalleProducto({
             </div>
 
             {/* Cantidad + Añadir */}
-            <div className="flex items-center gap-3 mt-1">
-              <div className="flex items-center border border-border rounded-lg overflow-hidden">
+            <div className="flex flex-wrap items-center gap-3 mt-1">
+              <div className="flex shrink-0 items-center border border-border rounded-lg overflow-hidden">
                 <button
                   onClick={() => setCantidad((c) => Math.max(1, c - 1))}
                   className="h-10 w-10 flex items-center justify-center hover:bg-muted"
