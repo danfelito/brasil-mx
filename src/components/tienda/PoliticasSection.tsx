@@ -46,6 +46,8 @@ const POLITICAS = [
     titulo: "3. Formas de pago",
     color: "var(--brand)",
     items: [
+      "Los precios publicados son FOB (Free On Board / Franco a bordo), conforme al punto de entrega acordado en la cotización.",
+      "Flete, seguro, maniobras y otros cargos posteriores al punto FOB se cotizan por separado cuando correspondan.",
       "Los precios y condiciones de pago se expresan en MXN dentro de cada cotización.",
       "La forma de pago y, cuando aplique, el anticipo se confirman antes de aceptar el pedido.",
       "Cualquier condición de crédito requiere evaluación y autorización previa por escrito.",
