@@ -136,7 +136,7 @@ export function Hero() {
               <motion.div
                 animate={{ rotateX: tilt.x, rotateY: tilt.y }}
                 transition={{ type: "spring", stiffness: 150, damping: 18 }}
-                className="absolute bottom-4 left-4 rounded-2xl bg-background/95 backdrop-blur px-4 py-3 shadow-lg ring-1 ring-border [transform:translateZ(40px)]"
+                className="absolute left-4 top-4 rounded-2xl bg-background/95 backdrop-blur px-4 py-3 shadow-lg ring-1 ring-border [transform:translateZ(40px)]"
               >
                 <div className="flex items-center gap-3">
                   <div className="h-10 w-10 rounded-xl bg-amber-accent/20 flex items-center justify-center">

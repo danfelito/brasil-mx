@@ -242,7 +242,7 @@ export function DetalleProducto({
                 className="flex-1 bg-brand text-brand-foreground hover:bg-brand/90 font-semibold h-10"
               >
                 <ShoppingBag className="h-4 w-4" />
-                Añadir · ${(producto.precio * cantidad).toFixed(2)}
+                Añadir · ${(producto.precio * cantidad).toFixed(2)} MXN
               </Button>
             </div>
 
