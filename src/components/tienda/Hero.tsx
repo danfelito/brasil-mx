@@ -4,7 +4,6 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, ArrowRight, Building2, Factory, Truck, MessageCircle, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { SpessotoLogo, NewHollandLogo } from "./Logo";
 import { EMAIL_URL, WHATSAPP_URL } from "@/lib/contacto";
 
 export function Hero() {
@@ -40,8 +39,6 @@ export function Hero() {
               <Building2 className="h-3.5 w-3.5" />
               Ventas B2B para empresas en México · Brasil MX
             </div>
-
-            <div className="flex flex-wrap items-center gap-4 mb-5"><SpessotoLogo /><NewHollandLogo /></div>
 
             <h1 className="font-display font-extrabold tracking-tight text-4xl sm:text-5xl lg:text-6xl leading-[1.05] text-foreground">
               Calzado de seguridad
