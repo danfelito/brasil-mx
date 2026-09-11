@@ -13,7 +13,7 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
-import { SpessotoMark, NewHollandMark } from "./Logo";
+import { SpessotoLogo, NewHollandLogo } from "./Logo";
 import { CONTACTO, EMAIL_URL, WHATSAPP_URL } from "@/lib/contacto";
 
 const POLITICAS = [
@@ -132,13 +132,11 @@ export function PoliticasSection() {
           </p>
           <div className="mt-5 flex items-center justify-center gap-4">
             <div className="flex items-center gap-2">
-              <SpessotoMark className="h-6 w-6" />
-              <span className="text-xs font-bold text-foreground">SPESSOTO</span>
+              <SpessotoLogo />
             </div>
             <div className="h-5 w-px bg-border" />
             <div className="flex items-center gap-2">
-              <NewHollandMark className="h-5 w-5" />
-              <span className="text-xs font-bold text-[#003f87]">NEW HOLLAND</span>
+              <NewHollandLogo />
             </div>
           </div>
         </div>

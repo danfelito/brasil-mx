@@ -1,4 +1,5 @@
 "use client";
+import { ProductPhoto } from "./ProductPhoto";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -28,7 +29,7 @@ import { Separator } from "@/components/ui/separator";
 import { useCarrito } from "@/lib/cart";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
-import { SpessotoMark, NewHollandMark } from "./Logo";
+
 
 export function DetalleProducto({
   producto,
@@ -88,7 +89,7 @@ export function DetalleProducto({
         <div className="grid md:grid-cols-2">
           {/* Imagen */}
           <div className="relative bg-muted/40 aspect-square md:aspect-auto md:min-h-[460px]">
-            <img
+            <ProductPhoto
               src={producto.imagen}
               alt={`${producto.nombre} - ${producto.codigo}`}
               className="h-full w-full object-cover"
@@ -124,7 +125,7 @@ export function DetalleProducto({
                         : "bg-brand-light text-[#003f87]"
                     )}
                   >
-                    {producto.marca === "Spessoto" ? <SpessotoMark className="h-3 w-3" /> : <NewHollandMark className="h-3 w-3" />}
+                    
                     {producto.marca}
                   </span>
                   <Badge variant="outline" className="font-semibold">

@@ -1,4 +1,5 @@
 "use client";
+import { ProductPhoto } from "./ProductPhoto";
 
 import { Minus, Plus, Trash2, ShoppingBag, ShieldCheck, Truck } from "lucide-react";
 import { useCarrito, subtotal, type ItemCarrito } from "@/lib/cart";
@@ -117,7 +118,7 @@ function ItemLinea({
   return (
     <div className="flex gap-3 rounded-xl border border-border bg-card p-2.5">
       <div className="h-20 w-20 rounded-lg overflow-hidden bg-muted shrink-0">
-        <img src={item.imagen} alt={item.nombre} className="h-full w-full object-cover" />
+        <ProductPhoto src={item.imagen} alt={item.nombre} className="h-full w-full object-cover" />
       </div>
       <div className="flex-1 min-w-0">
         <div className="flex items-start justify-between gap-2">

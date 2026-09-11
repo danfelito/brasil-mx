@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, ArrowRight, Building2, Factory, Truck, MessageCircle, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { SpessotoMark, NewHollandMark } from "./Logo";
+import { SpessotoLogo, NewHollandLogo } from "./Logo";
 import { EMAIL_URL, WHATSAPP_URL } from "@/lib/contacto";
 
 export function Hero() {
@@ -41,27 +41,7 @@ export function Hero() {
               Ventas B2B para empresas en México · Brasil MX
             </div>
 
-            <div className="flex items-center gap-4 mb-5">
-              <div className="flex items-center gap-2">
-                <SpessotoMark className="h-8 w-8" />
-                <div className="leading-tight">
-                  <div className="font-display font-extrabold text-lg text-foreground">SPESSOTO</div>
-                  <div className="text-[0.58rem] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                    Desde 1915
-                  </div>
-                </div>
-              </div>
-              <div className="h-8 w-px bg-border" />
-              <div className="flex items-center gap-2">
-                <NewHollandMark className="h-7 w-7" />
-                <div className="leading-tight">
-                  <div className="font-display font-extrabold text-sm text-[#003f87]">NEW HOLLAND</div>
-                  <div className="text-[0.55rem] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                    Safety Footwear
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div className="flex flex-wrap items-center gap-4 mb-5"><SpessotoLogo /><NewHollandLogo /></div>
 
             <h1 className="font-display font-extrabold tracking-tight text-4xl sm:text-5xl lg:text-6xl leading-[1.05] text-foreground">
               Calzado de seguridad
@@ -116,7 +96,7 @@ export function Hero() {
               ref={ref}
               onMouseMove={onMove}
               onMouseLeave={onLeave}
-              className="relative aspect-[4/3] sm:aspect-[16/11] rounded-3xl overflow-hidden shadow-2xl shadow-brand/20 ring-1 ring-brand/10 [perspective:1000px]"
+              className="relative aspect-[7/4] rounded-3xl overflow-hidden shadow-2xl shadow-brand/20 ring-1 ring-brand/10 [perspective:1000px]"
             >
               <motion.div
                 animate={{ rotateX: tilt.x, rotateY: tilt.y }}
@@ -129,37 +109,14 @@ export function Hero() {
                   className="h-full w-full object-cover"
                   loading="eager"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand/50 via-transparent to-transparent" />
+
               </motion.div>
 
-              {/* Sello flotante */}
-              <motion.div
-                animate={{ rotateX: tilt.x, rotateY: tilt.y }}
-                transition={{ type: "spring", stiffness: 150, damping: 18 }}
-                className="absolute left-4 top-4 rounded-2xl bg-background/95 backdrop-blur px-4 py-3 shadow-lg ring-1 ring-border [transform:translateZ(40px)]"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-xl bg-amber-accent/20 flex items-center justify-center">
-                    <ShieldCheck className="h-5 w-5 text-amber-accent" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold text-foreground leading-tight">Calzado certificado EPI</div>
-                    <div className="text-[0.7rem] text-muted-foreground">Puntera de acero · Antideslizante</div>
-                  </div>
-                </div>
-              </motion.div>
             </div>
-
-            {/* Tarjeta de precio flotante */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              className="absolute -bottom-5 right-2 sm:right-6 rounded-2xl bg-brand text-brand-foreground px-4 py-3 shadow-xl"
-            >
-              <div className="text-[0.65rem] uppercase tracking-wider opacity-80">Desde</div>
-              <div className="font-display font-extrabold text-2xl leading-none">$421<span className="text-base font-bold"> MXN</span></div>
-            </motion.div>
+            <div className="mt-4 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-brand/10 bg-white p-4">
+              <div className="flex items-center gap-3"><ShieldCheck className="h-6 w-6 shrink-0 text-brand" /><div><p className="text-sm font-bold">Calzado certificado EPI</p><p className="text-xs text-muted-foreground">Protección para tu jornada de trabajo</p></div></div>
+              <div className="text-brand"><span className="block text-xs text-muted-foreground">Desde · FOB</span><span className="font-display text-2xl font-extrabold">$421 <span className="text-sm">MXN</span></span></div>
+            </div>
           </motion.div>
         </div>
       </div>

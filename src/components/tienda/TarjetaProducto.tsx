@@ -1,11 +1,12 @@
 "use client";
+import { ProductPhoto } from "./ProductPhoto";
 
 import { motion } from "framer-motion";
 import { Star, ShieldCheck, Plus, ChevronRight, Check } from "lucide-react";
 import type { Producto } from "@/data/productos";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { SpessotoMark, NewHollandMark } from "./Logo";
+
 import { cn } from "@/lib/utils";
 
 const formatoPrecio = new Intl.NumberFormat("es-MX", {
@@ -43,57 +44,17 @@ export function TarjetaProducto({
         className="relative aspect-square overflow-hidden bg-white block"
         aria-label={`Ver ${producto.nombre}`}
       >
-        <img
+        <ProductPhoto
           src={producto.imagen}
           alt={`${producto.nombre} - ${producto.codigo} (${producto.marca})`}
           className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
           loading="lazy"
         />
 
-        <div className="absolute top-3 left-3 flex flex-col gap-1.5">
-          <div
-            className={cn(
-              "inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[0.6rem] font-bold uppercase tracking-wide shadow",
-              esSpessoto ? "bg-[#003f87] text-white" : "bg-white text-[#003f87]"
-            )}
-          >
-            {esSpessoto ? (
-              <SpessotoMark className="h-3 w-3" />
-            ) : (
-              <NewHollandMark className="h-3 w-3" />
-            )}
-            {producto.marca}
-          </div>
-          {producto.nuevo && (
-            <Badge className="bg-amber-accent text-amber-foreground hover:bg-amber-accent font-bold text-[0.65rem] shadow w-fit">
-              NUEVO 2026
-            </Badge>
-          )}
-          {producto.destacado && (
-            <Badge className="bg-brand text-brand-foreground hover:bg-brand font-bold text-[0.65rem] shadow w-fit">
-              DESTACADO
-            </Badge>
-          )}
-        </div>
-
-        <div className="absolute top-3 right-3">
-          <Badge variant="secondary" className="bg-background/90 backdrop-blur font-semibold text-[0.65rem]">
-            {producto.linea === "dama"
-              ? "MUJER"
-              : producto.linea === "caballero"
-                ? "HOMBRE"
-                : "UNISEX"}
-          </Badge>
-        </div>
-
-        <div className="absolute inset-0 bg-gradient-to-t from-brand/60 via-brand/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
-          <span className="text-white text-sm font-semibold flex items-center gap-1 translate-y-2 group-hover:translate-y-0 transition-transform">
-            Ver detalle <ChevronRight className="h-4 w-4" />
-          </span>
-        </div>
       </button>
 
       <div className="flex flex-col flex-1 p-4 gap-3">
+        <div className="flex justify-between text-xs font-semibold text-brand"><span>{producto.marca}</span><span className="text-muted-foreground">{producto.linea === "dama" ? "Mujer" : producto.linea === "caballero" ? "Hombre" : "Unisex"}</span></div>
         <div>
           <div className="flex items-center justify-between gap-2 mb-1">
             <span className="text-[0.68rem] font-bold text-brand tracking-wider">{producto.codigo}</span>
@@ -157,7 +118,7 @@ export function TarjetaProducto({
 
         <div className="mt-auto flex items-end justify-between gap-2 pt-2 border-t border-border/60">
           <div>
-            <div className="text-[0.65rem] text-muted-foreground uppercase tracking-wide">Precio B2B</div>
+            <div className="text-[0.65rem] text-muted-foreground uppercase tracking-wide">Precio B2B · FOB</div>
             <div className="font-display font-extrabold text-2xl text-foreground leading-none">
               {formatoPrecio.format(producto.precio)}
             </div>
