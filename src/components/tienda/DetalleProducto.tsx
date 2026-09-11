@@ -70,8 +70,7 @@ export function DetalleProducto({
       precio: producto.precio,
       material: material.nombre,
       talla,
-      cantidad,
-    });
+    }, cantidad);
     toast.success("Añadido al carrito", {
       description: `${producto.nombre} · ${material.nombre} · Talla ${talla} ×${cantidad}`,
     });

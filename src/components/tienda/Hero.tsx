@@ -69,7 +69,7 @@ export function Hero() {
 
             {/* Indicadores B2B */}
             <div className="mt-9 grid grid-cols-3 gap-4 max-w-md">
-              <Stat icon={<ShieldCheck className="h-5 w-5" />} valor="25+" etiqueta="Modelos 2026" />
+              <Stat icon={<ShieldCheck className="h-5 w-5" />} valor="19" etiqueta="Modelos 2026" />
               <Stat icon={<Factory className="h-5 w-5" />} valor="B2B" etiqueta="Empresas y obra" />
               <Stat icon={<Truck className="h-5 w-5" />} valor="MX" etiqueta="Envío a todo México" />
             </div>
