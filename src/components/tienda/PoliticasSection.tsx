@@ -14,6 +14,7 @@ import {
   Mail,
 } from "lucide-react";
 import { SpessotoMark, NewHollandMark } from "./Logo";
+import { CONTACTO, EMAIL_URL, WHATSAPP_URL } from "@/lib/contacto";
 
 const POLITICAS = [
   {
@@ -33,9 +34,9 @@ const POLITICAS = [
     titulo: "2. Solicitud de cotización",
     color: "var(--brand)",
     items: [
-      "Toda compra inicia con una cotización: vía formulario de la web, correo o teléfono.",
+      "Toda compra inicia con una cotización por WhatsApp o correo electrónico.",
       "Indica modelos, materiales, tallas por trabajador y cantidad de pares.",
-      "Respuesta garantizada en menos de 4 horas hábiles.",
+      "Confirmaremos recepción y daremos seguimiento por el canal que elijas.",
       "La cotización incluye precio unitario, descuento por volumen, envío y fecha de entrega estimada.",
       "Validez de la cotización: 15 días naturales.",
     ],
@@ -45,9 +46,9 @@ const POLITICAS = [
     titulo: "3. Formas de pago",
     color: "var(--brand)",
     items: [
-      "Transferencia bancaria (SPEI) en MXN al tipo de cambio del día de facturación.",
-      "50% de anticipo al confirmar el pedido; 50% contra entrega (o 100% anticipado para envíos foráneos).",
-      "Empresas con crédito aprobado: pago a 15, 30 o 45 días según convenio.",
+      "Los precios y condiciones de pago se expresan en MXN dentro de cada cotización.",
+      "La forma de pago y, cuando aplique, el anticipo se confirman antes de aceptar el pedido.",
+      "Cualquier condición de crédito requiere evaluación y autorización previa por escrito.",
       "No se cobra ningún monto hasta confirmar disponibilidad de tallas y materiales.",
       "Factura electrónica (CFDI) emitida a nombre de la empresa con su RFC.",
     ],
@@ -57,9 +58,9 @@ const POLITICAS = [
     titulo: "4. Envíos y entregas",
     color: "var(--amber-accent)",
     items: [
-      "Envío a todo México. Gratis en pedidos superiores a $200 MXN dentro de la zona metropolitana.",
-      "Entrega en CDMX, Estado de México y principales ciudades: 2 a 4 días hábiles.",
-      "Zonas foráneas y rurales: 4 a 8 días hábiles, sujeto a paquetería.",
+      "Realizamos envíos a todo México; costo y cobertura se calculan según destino y volumen.",
+      "El plazo estimado se incluye en la cotización y depende de existencias y paquetería.",
+      "Los destinos foráneos y rurales están sujetos a cobertura del transportista.",
       "Entrega directa en obra, almacén o bodega del cliente (solicítalo en la cotización).",
       "Número de rastreo enviado por correo al despachar el pedido.",
     ],
@@ -69,9 +70,9 @@ const POLITICAS = [
     titulo: "5. Disponibilidad y tiempos de producción",
     color: "var(--amber-accent)",
     items: [
-      "Las tallas marcadas en cada modelo del catálogo son las disponibles al momento de la cotización.",
-      "Modelos New Holland con licencia Spessoto: producción bajo pedido, 15 a 25 días hábiles si la talla no está en stock.",
-      "Línea premium Spessoto: entrega inmediata desde inventario para tallas estándar (38–45).",
+      "Las tallas mostradas corresponden al rango comercial del modelo y no garantizan existencia inmediata.",
+      "La disponibilidad y el plazo de reposición se revisan para cada modelo y talla solicitados.",
+      "La fecha estimada de entrega se confirma por escrito antes del pago.",
       "Se confirma disponibilidad real antes de cobrar el anticipo.",
     ],
   },
@@ -80,10 +81,10 @@ const POLITICAS = [
     titulo: "6. Garantía de calidad y certificación",
     color: "var(--brand)",
     items: [
-      "Todo el calzado cumple la norma EPI de seguridad (protección contra impacto, compresión y deslizamiento).",
-      "Garantía de fabricación de 90 días por defectos de materiales o costura (no cubre desgaste normal).",
-      "Modelos con puntera de acero certificados para impacto de 200 J.",
-      "Certificados de cumplimiento disponibles para auditorías de seguridad laboral bajo solicitud.",
+      "Las características de protección varían según el modelo; revisa la ficha antes de seleccionar.",
+      "La garantía aplicable se informa en la cotización y cubre defectos de fabricación conforme a las condiciones del proveedor.",
+      "Los modelos con puntera u otras protecciones se identifican expresamente en su ficha.",
+      "La documentación técnica disponible puede solicitarse antes de confirmar el pedido.",
     ],
   },
   {
@@ -105,7 +106,7 @@ const POLITICAS = [
       "Factura CFDI 4.0 emitida por Brasil MX a nombre de la empresa compradora.",
       "Proporciona razón social, RFC, régimen fiscal, código postal y uso de CFDI al confirmar el pedido.",
       "La factura se envía por correo en un máximo de 3 días hábiles tras la entrega.",
-      "Precios en MXN; el pago se realiza al tipo de cambio publicado por Banxico del día.",
+      "Precios y pagos expresados en MXN, salvo que la cotización indique expresamente otra condición.",
     ],
   },
 ];
@@ -202,18 +203,20 @@ export function PoliticasSection() {
             </div>
             <div className="flex flex-col sm:flex-row gap-3 md:justify-end">
               <a
-                href="tel:2294648962"
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-accent text-amber-foreground font-bold px-5 py-3 hover:bg-amber-accent/90 transition-colors"
               >
                 <Phone className="h-4 w-4" />
-                229 464 8962
+                WhatsApp {CONTACTO.telefono}
               </a>
               <a
-                href="mailto:ventas@brasilmx.mx"
+                href={EMAIL_URL}
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-foreground/10 border border-brand-foreground/20 text-brand-foreground font-semibold px-5 py-3 hover:bg-brand-foreground/15 transition-colors"
               >
                 <Mail className="h-4 w-4" />
-                ventas@brasilmx.mx
+                {CONTACTO.correo}
               </a>
             </div>
           </div>

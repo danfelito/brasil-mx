@@ -2,8 +2,8 @@ import { Header } from "@/components/tienda/Header";
 import { Hero } from "@/components/tienda/Hero";
 import { Catalogo } from "@/components/tienda/Catalogo";
 import { SeguridadSection } from "@/components/tienda/SeguridadSection";
-import { Testimonios } from "@/components/tienda/Testimonios";
 import { PoliticasSection } from "@/components/tienda/PoliticasSection";
+import { ContactoSection } from "@/components/tienda/ContactoSection";
 import { Footer } from "@/components/tienda/Footer";
 import { CarritoDrawer } from "@/components/tienda/CarritoDrawer";
 import { GuiaTallas } from "@/components/tienda/GuiaTallas";
@@ -18,8 +18,8 @@ export default function Home() {
         <Catalogo />
         <SeguridadSection />
         <GuiaTallas />
-        <Testimonios />
         <CtaCorporativo />
+        <ContactoSection />
         <PoliticasSection />
       </main>
       <Footer />

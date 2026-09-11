@@ -2,9 +2,10 @@
 
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { ShieldCheck, ArrowRight, Building2, Factory, Truck, Phone } from "lucide-react";
+import { ShieldCheck, ArrowRight, Building2, Factory, Truck, MessageCircle, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SpessotoMark, NewHollandMark } from "./Logo";
+import { EMAIL_URL, WHATSAPP_URL } from "@/lib/contacto";
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -93,12 +94,14 @@ export function Hero() {
               <Stat icon={<Truck className="h-5 w-5" />} valor="MX" etiqueta="Envío a todo México" />
             </div>
 
-            <div className="mt-5 flex items-center gap-2 text-sm text-muted-foreground">
-              <Phone className="h-4 w-4 text-brand" />
-              <span>Cotizaciones:</span>
-              <a href="tel:2294648962" className="font-semibold text-brand hover:underline">229 464 8962</a>
-              <span>·</span>
-              <a href="mailto:ventas@brasilmx.mx" className="font-semibold text-brand hover:underline">ventas@brasilmx.mx</a>
+            <div className="mt-5 flex flex-wrap items-center gap-2 text-sm">
+              <span className="mr-1 text-muted-foreground">Cotizaciones:</span>
+              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-lg bg-[#168C45] px-3 py-2 font-semibold text-white hover:bg-[#12753A]">
+                <MessageCircle className="h-4 w-4" /> WhatsApp
+              </a>
+              <a href={EMAIL_URL} className="inline-flex items-center gap-1.5 rounded-lg border border-brand/25 px-3 py-2 font-semibold text-brand hover:bg-brand-light">
+                <Mail className="h-4 w-4" /> Email
+              </a>
             </div>
           </motion.div>
 
@@ -121,8 +124,8 @@ export function Hero() {
                 className="absolute inset-0 [transform-style:preserve-3d]"
               >
                 <img
-                  src="/products/hero-b2b-team.png"
-                  alt="Equipo de trabajo industrial en México usando calzado de seguridad Spessoto y New Holland"
+                  src="/products/hero-b2b-models.webp"
+                  alt="Modelos usando botas de trabajo Spessoto y New Holland en un almacén"
                   className="h-full w-full object-cover"
                   loading="eager"
                 />

@@ -20,9 +20,10 @@ const barlowCondensed = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://brasilbusiness.shop"),
   title: "Brasil MX · Spessoto & New Holland | Calzado de Seguridad B2B México",
   description:
-    "Distribuidor B2B en México de calzado de seguridad certificado. Marcas Spessoto (desde 1915) y New Holland. Botinas y botas para dama y caballero con puntera de acero, suela antideslizante y tecnología de protección. Cotización por volumen, precios en USD. Contacto: 229 464 8962 · ventas@brasilmx.mx",
+    "Distribuidor B2B en México de calzado de seguridad Spessoto y New Holland. Botinas y botas para dama y caballero. Cotización por volumen en MXN. Contacto: 229 464 8952 · contacto@brasilbusiness.shop",
   keywords: [
     "Spessoto",
     "New Holland",
@@ -41,6 +42,8 @@ export const metadata: Metadata = {
     description:
       "Calzado de seguridad profesional Spessoto y New Holland. Distribución B2B en México. Catálogo 2026 en español.",
     siteName: "Brasil MX",
+    url: "https://brasilbusiness.shop",
+    images: [{ url: "/products/hero-b2b-models.webp", width: 1344, height: 768 }],
     type: "website",
     locale: "es_MX",
   },

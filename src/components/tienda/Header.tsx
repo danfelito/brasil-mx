@@ -1,17 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ShoppingBag, Menu, X, ShieldCheck, Phone } from "lucide-react";
+import { ShoppingBag, Menu, X, ShieldCheck, MessageCircle, Mail } from "lucide-react";
 import { Logo } from "./Logo";
 import { useCarrito, totalItems } from "@/lib/cart";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { EMAIL_URL, WHATSAPP_URL } from "@/lib/contacto";
 
 const NAV = [
   { label: "Catálogo", href: "#catalogo" },
   { label: "Por uso", href: "#usos" },
   { label: "Seguridad", href: "#seguridad" },
-  { label: "Empresa", href: "#empresa" },
+  { label: "Contacto", href: "#contacto" },
   { label: "Políticas", href: "#politicas" },
 ];
 
@@ -68,12 +69,11 @@ export function Header() {
             </nav>
 
             <div className="flex items-center gap-2">
-              <a
-                href="tel:2294648962"
-                className="hidden lg:inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:text-brand/80 px-2"
-              >
-                <Phone className="h-4 w-4" />
-                229 464 8962
+              <a href={EMAIL_URL} aria-label="Enviar correo" className="hidden lg:inline-flex items-center gap-1.5 rounded-lg border border-brand/20 px-3 py-2 text-sm font-semibold text-brand hover:bg-brand-light">
+                <Mail className="h-4 w-4" /> Email
+              </a>
+              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="hidden lg:inline-flex items-center gap-1.5 rounded-lg bg-[#168C45] px-3 py-2 text-sm font-semibold text-white hover:bg-[#12753A]">
+                <MessageCircle className="h-4 w-4" /> WhatsApp
               </a>
               <Button
                 onClick={abrirCarrito}
@@ -113,11 +113,11 @@ export function Header() {
                   {n.label}
                 </a>
               ))}
-              <a
-                href="tel:2294648962"
-                className="px-2 py-3 text-sm font-semibold text-brand flex items-center gap-2"
-              >
-                <Phone className="h-4 w-4" /> 229 464 8962
+              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="px-2 py-3 text-sm font-semibold text-[#168C45] flex items-center gap-2">
+                <MessageCircle className="h-4 w-4" /> WhatsApp comercial
+              </a>
+              <a href={EMAIL_URL} className="px-2 py-3 text-sm font-semibold text-brand flex items-center gap-2">
+                <Mail className="h-4 w-4" /> Correo electrónico
               </a>
             </div>
           </nav>

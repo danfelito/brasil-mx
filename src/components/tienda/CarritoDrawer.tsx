@@ -1,6 +1,6 @@
 "use client";
 
-import { Minus, Plus, Trash2, ShoppingBag, X, ShieldCheck, Truck } from "lucide-react";
+import { Minus, Plus, Trash2, ShoppingBag, ShieldCheck, Truck } from "lucide-react";
 import { useCarrito, subtotal, type ItemCarrito } from "@/lib/cart";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
@@ -18,8 +18,6 @@ export function CarritoDrawer() {
   const [checkoutAbierto, setCheckoutAbierto] = useState(false);
 
   const sub = subtotal(items);
-  const envio = sub > 200 || sub === 0 ? 0 : 15;
-  const total = sub + envio;
 
   return (
     <>
@@ -62,22 +60,10 @@ export function CarritoDrawer() {
                 ))}
 
                 <div className="rounded-xl bg-brand-light/50 border border-brand/10 p-3 flex items-start gap-2">
-                  {envio === 0 ? (
-                    <>
-                      <Truck className="h-4 w-4 text-brand mt-0.5 shrink-0" />
-                      <p className="text-xs text-foreground/80">
-                        <span className="font-semibold text-brand">¡Envío gratis!</span> Tu pedido supera el mínimo de compra.
-                      </p>
-                    </>
-                  ) : (
-                    <>
-                      <Truck className="h-4 w-4 text-muted-foreground mt-0.5 shrink-0" />
-                      <p className="text-xs text-muted-foreground">
-                        <span className="font-semibold text-brand">${(200 - sub).toFixed(2)} MXN</span> para envío gratis.
-                        envío gratis.
-                      </p>
-                    </>
-                  )}
+                  <Truck className="h-4 w-4 text-brand mt-0.5 shrink-0" />
+                  <p className="text-xs text-foreground/80">
+                    El costo y plazo de envío se incluirán en tu cotización según destino y volumen.
+                  </p>
                 </div>
               </div>
 
@@ -85,19 +71,17 @@ export function CarritoDrawer() {
               <div className="border-t border-border px-5 py-4 space-y-2 bg-muted/30">
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">Subtotal</span>
-                  <span className="font-semibold">${sub.toFixed(2)} USD</span>
+                  <span className="font-semibold">${sub.toFixed(2)} MXN</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">Envío</span>
-                  <span className="font-semibold">
-                    {envio === 0 ? <span className="text-brand">Gratis</span> : `$${envio.toFixed(2)} USD`}
-                  </span>
+                  <span className="font-semibold text-brand">Por cotizar</span>
                 </div>
                 <Separator className="my-2" />
                 <div className="flex justify-between items-baseline">
                   <span className="font-bold text-foreground">Total</span>
                   <span className="font-display font-extrabold text-2xl text-brand">
-                    ${total.toFixed(2)} <span className="text-sm">USD</span>
+                    ${sub.toFixed(2)} <span className="text-sm">MXN estimado</span>
                   </span>
                 </div>
                 <Button
@@ -105,10 +89,10 @@ export function CarritoDrawer() {
                   className="w-full bg-brand text-brand-foreground hover:bg-brand/90 font-semibold h-11 mt-2"
                 >
                   <ShieldCheck className="h-4 w-4" />
-                  Proceder al pago
+                  Solicitar cotización
                 </Button>
                 <p className="text-[0.7rem] text-center text-muted-foreground">
-                  Pago seguro · Confirmación de disponibilidad en 24 h
+                  Sin cobro en línea · Confirmación de disponibilidad
                 </p>
               </div>
             </>
@@ -173,7 +157,7 @@ function ItemLinea({
           </div>
           <div className="font-display font-bold text-foreground">
             ${(item.precio * item.cantidad).toFixed(2)}
-            <span className="text-[0.65rem] text-muted-foreground font-medium ml-0.5">USD</span>
+            <span className="text-[0.65rem] text-muted-foreground font-medium ml-0.5">MXN</span>
           </div>
         </div>
       </div>
